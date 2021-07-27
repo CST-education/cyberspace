@@ -1,0 +1,13 @@
+.topNavigation {
+    display: flex;
+  &.navList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 2em;
+    grid-auto-flow: dense;
+    column-gap: 2em;
+    column-count: 2;
+  }
+  &.languages {
+  }
+}
