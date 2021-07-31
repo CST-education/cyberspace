@@ -3,6 +3,8 @@ import { Icons } from '../../images/icons/Icons'
 import hero from '../../images/icons/hero.svg'
 import heroLeft from '../../images/icons/hero-left.svg'
 import jobHand from '../../images/jobhand.svg'
+import s from '../../images/s.png'
+import hand from '../../images/hand.png'
 
 export function Hero() {
   return (
@@ -28,7 +30,7 @@ export function Hero() {
           </div>
           <div className="intro-type">
             <div className="intro-type__slogan">
-              <Icons name="hero" />
+              <Icons name="hero" color="white" />
             </div>
             <p className="intro-type__second intro-type__small">
               Development with Love! <br />
@@ -40,7 +42,7 @@ export function Hero() {
         <div className="parallax-container" aria-hidden="true">
           <div className="parallax" id="scene">
             <div className="parallax__layer">
-              <img src="" alt="flying smthng" />
+              {/* <img src={hand} alt="flying smthng" width="128" /> */}
             </div>
             <div className="parallax__layer">
               <img src="" alt="flying smthng" />
@@ -49,7 +51,7 @@ export function Hero() {
               <img src="" alt="flying smthng" />
             </div>
             <div className="parallax__layer">
-              <img src="" alt="flying smthng" />
+              <img src={s} alt="flying smthng" width="64" />
             </div>
             <div className="parallax__layer">
               <img src="" alt="flying smthng" />
@@ -58,9 +60,7 @@ export function Hero() {
               <img src="" alt="flying smthng" />
             </div>
           </div>
-
         </div>
-     
       </div>
     </section>
   )
