@@ -150,20 +150,25 @@
   min-height: 80vh;
   display: flex;
   align-items: center;
+  color: #38063f;
+  color: #e1ff00;
 }
+// color: #00fdcf;
+// color: #0000ff;
 .intro:before {
   content: '';
   height: 30vmin;
   width: 80%;
-  // background: url('/assets/brush-383fe9357ef666eccfdad630b7b9273f96df63e411b0121ffdaf9c7f504398fc.webp');
+  background: url('../../images/home-banner.jpg');
+  background-blend-mode: color-burn;
   background-size: 100% 100%;
   position: absolute;
   left: 50%;
-  top: calc(50% - 8.5vmin);
+  top: calc(58% - 8.5vmin);
   transform: translate(-50%, -50%);
 }
 .intro--cyber:before {
-  // background-image: url('/images/numbers.png');
+  background-image: url('../../images/hero-pseudoback.jpg');
   background-size: cover;
 }
 .intro__center {
@@ -239,6 +244,7 @@
   top: 130%;
   height: 17vmin;
   width: 1px;
+  color: #43d1d6;
   background: #fff;
 }
 .intro-type__second {
@@ -304,14 +310,14 @@
 }
 .parallax__layer:nth-child(1) img {
   width: 42.3055%;
-  left: 25.3472%;
-  top: 19%;
+  left: 29%;
+  top: 29%;
   -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+  animation-delay: 2s;
 }
 .parallax__layer:nth-child(2) img {
   width: 8.6%;
-  left: 25.3%;
+  left: 75.3%;
   top: 42.3%;
   -webkit-animation-delay: 1.4s;
   animation-delay: 1.4s;
@@ -319,7 +325,7 @@
 .parallax__layer:nth-child(3) img {
   width: 6.6%;
   left: 36%;
-  top: 88%;
+  top: 38%;
   -webkit-animation-delay: 1.4s;
   animation-delay: 1.4s;
 }
@@ -334,6 +340,27 @@
   width: 13.8%;
   left: 0%;
   top: 62%;
+  -webkit-animation-delay: 2.2s;
+  animation-delay: 2.2s;
+}
+.parallax__layer:nth-child(6) img {
+  width: 13.8%;
+  left: 58%;
+  top: 62%;
+  -webkit-animation-delay: 2.2s;
+  animation-delay: 2.2s;
+}
+.parallax__layer:nth-child(7) img {
+  width: 13.8%;
+  left: 49%;
+  top: 32%;
+  -webkit-animation-delay: 2.2s;
+  animation-delay: 2.2s;
+}
+.parallax__layer:nth-child(8) img {
+  width: 13.8%;
+  left: 69%;
+  top: 82%;
   -webkit-animation-delay: 2.2s;
   animation-delay: 2.2s;
 }

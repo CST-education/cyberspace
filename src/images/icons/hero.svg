@@ -17,7 +17,7 @@
       y1="6.685%"
       y2="92.541%"
     >
-    <stop offset="0%" stop-color="#00FDCF" />
+    <stop offset="0%" stop-color="#c424da" />
     <stop offset="100%" stop-color="#0000FF" />
     <animate
         attributeName="x1"
@@ -44,12 +44,13 @@
         repeatCount="indefinite"
       />
     </linearGradient>
-        <mask id="mask-hand" fill="#fff">
-            <path id="hand-outline"
+        <mask id="mask-hand" fill="black">
+            <path
+        id="hand-outline"
         d="M812 4c11-2 20-1 28 3s17 9 20 16c2 4 3 18 3 41 0 40-3 44-10 68l-19 70a242 242 0 0 1-29 76 935 935 0 0 0-51 154c-2 8-6 48-5 53 2 5-4 53-7 72-3 12-21 97-23 115-4 37-10 60-19 81-4 8-23 64-23 69-3 21-3 58 1 91a2763 2763 0 0 1 6 66c-3 3-17 6-36 7-16 1-147 19-155 15-46-6-70-10-72-13-2-4-16-8-19-10a1068 1068 0 0 0-5-98l-1-16c0-5-23-40-24-43l-33-96-10-40a1861 1861 0 0 1 8-274c0-4-8-43-10-47-1-5-14-40-15-51-2-18-5-35-12-66-8-31-8-33-9-50-2-21-3-53-2-53 1-1 13-24 23-29 5-2 23-3 28-1 15 7 23 21 32 58 4 15 5 20 8 47 2 23 9 47 20 74a1601 1601 0 0 1 24 87c3 2 4 2 6-3 2-2 2-5 2-14 0-14 1-33 4-43 4-15 16-32 27-37 17-8 38-8 52 0l8-3 16-23c4-5 49-14 54-13 15 4 31 17 37 30 2 4 15 41 16 53s3 17 6 17 8-4 11-9c6-7 16-26 17-30 0-3 77-180 81-197l17-60c3-7 13-30 17-35 5-6 10-9 17-9z"
       />
         </mask>
-            <mask id="mask-border" fill="#fff">
+            <mask id="mask-border" fill="#black">
                 <rect width="188" height="71" x="258" y="152" />
             </mask>
             <filter
@@ -60,12 +61,7 @@
       y="-10.8%"
       filterUnits="objectBoundingBox"
     >
-    <feOffset
-        dx="-20"
-        dy="10"
-        in="SourceAlpha"
-        result="shadowOffsetOuter1"
-      />
+    <feOffset dx="-20" dy="10" in="SourceAlpha" result="shadowOffsetOuter1" />
     <feGaussianBlur
         in="shadowOffsetOuter1"
         result="shadowBlurOuter1"
@@ -87,28 +83,28 @@
     <image
       class="hand-shadow"
       filter="url(#shadow)"
-      xlink:href="./hand-small.png"
+      xlink:href="../hand-small.png"
       x="284"
       width="572"
       height="1100"
     />
     <image
       class="hand-base"
-      xlink:href="./hand-small.png"
+      xlink:href="../hand-small.png"
       x="284"
       width="572"
       height="1100"
     />
     <image
       class="hand-glitch hand-glitch--basic"
-      xlink:href="./hand-small.png"
+      xlink:href="../hand-small.png"
       x="274"
       width="572"
       height="1100"
     />
     <image
       class="hand-glitch-2 hand-glitch-2--basic"
-      xlink:href="./hand-small.png"
+      xlink:href="../hand-small.png"
       x="260"
       y="-5"
       width="572"
@@ -118,7 +114,7 @@
       class="glitch-line glitch-line--basic"
       width="1100"
       height="1100"
-      fill="#E1FF00"
+      fill="none"
       mask="url(#mask-hand)"
     />
     <path
@@ -127,5 +123,5 @@
       fill="url(#basic-gradient)"
       d="M182 175h736v743H182V175zm19 19v705h698V194H201z"
     />
-              </g>
-            </svg>
+  </g>
+  </svg>
