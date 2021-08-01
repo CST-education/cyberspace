@@ -1,6 +1,8 @@
 import s from './Navigation.module.scss'
 export function MainMenu() {
   return (
+    <>
+    <button>M</button>
     <nav role="navigation" className={s.globalMenu}>
       <ul className={s.navList}>
         <li className={s.item}>
@@ -55,5 +57,6 @@ export function MainMenu() {
         Close Navigation
       </button>
     </nav>
+    </>
   )
 }
