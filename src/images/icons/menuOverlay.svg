@@ -1,0 +1,27 @@
+<svg class="shape-overlays is-opened"  viewbox="0 0 100 100" preserveaspectratio="none">
+      <defs>
+        <lineargradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#00FDCF" />
+          <stop offset="100%" stop-color="#0000FF" />
+        </lineargradient>
+        <lineargradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#0000FF" />
+          <stop offset="100%" stop-color="#00FDCF" />
+        </lineargradient>
+      </defs>
+      <rect
+    class="shape-overlays__rect shape-overlays__rect--basic"
+    width="100"
+    height="100"
+  />
+      <rect
+    class="shape-overlays__rect shape-overlays__rect--basic"
+    width="100"
+    height="100"
+  />
+      <rect
+    class="shape-overlays__rect shape-overlays__rect--basic"
+    width="100"
+    height="100"
+  />
+    </svg>

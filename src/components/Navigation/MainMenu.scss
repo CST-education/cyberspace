@@ -1,0 +1,192 @@
+.menu-button {
+  position: fixed;
+  z-index: 10000;
+  cursor: pointer;
+  width: 10em;
+  min-width: 8vmin;
+  max-width: 12vw;
+  top: 1em;
+  left: calc(50%);
+  background: none;
+  border: none;
+  padding: 0;
+  transform: translateX(-50%);
+  perspective: 800px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  :focus {
+    box-shadow: 0 0 0.5em 0.5em green;
+    background: greenyellow;
+    outline: none;
+  }
+}
+.menu-button__card {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+.menu-button__front,
+.menu-button__back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+.menu-button__back {
+  background: yellow;
+  box-shadow: 0 0 0 2px yellow inset;
+}
+
+.menu-button__back img,
+.menu-button__front img,
+.menu-button__back svg,
+.menu-button__front svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.menu-button__back img {
+  width: calc(100%-0.25em);
+  height: calc(100%-0.25em);
+  margin: 0.125em;
+}
+.menu-button__front::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: black;
+}
+@media (hover: hover) and (pointer: fine) {
+  .menu-button:hover .menu-button__card,
+  .menu-button:focus .menu-button__card {
+    transform: rotateX(180dec);
+  }
+}
+.menu-button:focus .menu-button__card {
+  transform: rotateX(180dec);
+}
+.menu-button.is-scroll-down .menu-button__card,
+.menu-button.is-opened-navi .menu-button__card {
+  transform: rotateX(180dec);
+}
+.shape-overlays {
+  width: 100vw;
+  height: calc(100vh+100px);
+  pointer-events: none;
+  left: 0;
+  top: -50px;
+  position: fixed;
+  z-index: 900;
+}
+.shape-overlays.is-opened {
+  pointer-events: auto;
+}
+.shape-overlays__rect {
+  opacity: 0;
+}
+.shape-overlays.is-opened .shape-overlays__rect {
+  animation: swipe-down 0.6s ease-out both;
+  -webkit-animation: swipe-down 0.6s ease-out both;
+}
+.shape-overlays.is-opened .shape-overlays__rect:nth-of-type(2) {
+  animation: 0.15s;
+  -webkit-animation: 0.15s;
+}
+.shape-overlays.is-opened .shape-overlays__rect:nth-of-type(3) {
+  animation: 0.3s;
+  -webkit-animation: 0.3s;
+}
+
+
+// пока не работает
+@supports (-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)) or
+  (clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)) {
+  .shape-overlays.is-opened .shape-overlays__rect {
+    -webkit-animation: menu-flicker-2 1s linear both;
+    animation: menu-flicker-2 1s linear both;
+    -webkit-animation: menu-flicker-2 0.6s linear both;
+    animation: menu-flicker-2 0.6s linear both;
+  }
+  .shape-overlays.is-opened .shape-overlays__rect:nth-of-type(2) {
+    -webkit-animation-name: menu-flicker-3;
+    animation-name: menu-flicker-3;
+  }
+  .shape-overlays.is-opened .shape-overlays__rect:nth-of-type(3) {
+    -webkit-animation-name: swipe-down;
+    animation-name: swipe-down;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shape-overlays .shape-overlays__rect {
+    -webkit-animation-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+  .shape-overlays .shape-overlays__rect:nth-of-type(1),
+  .shape-overlays .shape-overlays__rect:nth-of-type(2) {
+    display: none;
+  }
+}
+.shape-overlays.is-closed .shape-overlays__rect {
+  -webkit-animation: swipe-up 0.6s ease-in-out both;
+  animation: swipe-up 0.6s ease-in-out both;
+}
+.shape-overlays.is-closed .shape-overlays__rect:nth-of-type(2) {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+.shape-overlays.is-closed .shape-overlays__rect:nth-of-type(1) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+@supports (-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)) or
+  (clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)) {
+  .shape-overlays.is-closed .shape-overlays__rect {
+    -webkit-animation: menu-flicker-close 3.5s linear both;
+    animation: menu-flicker-close 3.5s linear both;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  .shape-overlays.is-closed .shape-overlays__rect:nth-of-type(2) {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+  }
+  .shape-overlays.is-closed .shape-overlays__rect:nth-of-type(3) {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+}
+.shape-overlays__rect:nth-of-type(1) {
+  fill: url(#gradient1);
+}
+.shape-overlays__rect:nth-of-type(2) {
+  fill: url(#gradient2);
+  transform: translateY(-1px);
+}
+.shape-overlays__rect:nth-of-type(3) {
+  fill: #fff;
+  transform: translateY(-1.5px);
+}
+.shape-overlays__rect--pride:nth-of-type(1) {
+  fill: url(#gradient2-pride);
+}
+.shape-overlays__rect--pride:nth-of-type(2) {
+  fill: url(#gradient2-pride);
+}
