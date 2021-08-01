@@ -1,0 +1,93 @@
+.globalMenu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding-top: 4.5em;
+  font-size: 1rem;
+  text-align: left;
+  pointer-events: none;
+  overflow: auto;
+  overflow-x: hidden;
+  transition: display 0s 1s linear;
+  -webkit-overflow-scrolling: touch;
+  @media screen and (min-width: 112.5em) and (min-height: 60em) {
+    font-size: 1rem;
+    padding-top: 15vh;
+  }
+  @media screen and (min-width: 64em) and (min-height: 50evw) {
+    padding-top: 15vh;
+  }
+  .navList {
+    padding: 0;
+    margin: 0 auto 5em;
+    width: 90%;
+    max-width: 62.5em;
+    perspective: 800px;
+    perspective-origin: center 50%;
+    counter-reset: navigation;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // grid-gap: 0 2em;
+    // grid-auto-flow: dense;
+    // column-gap: 2em;
+    // column-count: 2;
+    .item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      color: black;
+      // opacity: 0;
+      padding: 0.5em 0;
+      border-top: 2px solid rgba(0, 5, 4, 0.1);
+      transform: translateY(-110%) rotateX(90deg);
+      transform: translateY(0%) translateZ(-3em);
+      transform-origin: center bottom;
+      transition: transform 0.4s, opacity 0.3s;
+      transition-timing-function: ease-in;
+      @media screen and (min-width: 52em) {
+        align-items: center;
+        position: relative;
+      }
+    }
+    .item:first-child {
+      border-top: none;
+    }
+    .item:nth-child(-n + 4)::after {
+      @media screen and (min-width: 74em) {
+        position: absolute;
+        content: '';
+        left: -1.5rem;
+        width: 2em;
+        height: 2px;
+        background: rgb(139, 173, 236);
+      }
+    }
+
+    .item:nth-child(-n + 4)::before {
+      @media screen and (min-width: 74em) {
+        position: absolute;
+        content: '0' counter(navigation);
+        left: -2.6rem;
+        top: 1.3em;
+        font-size: 1.625em;
+        font-weight: 400;
+      }
+    }
+    .link {
+      display: block;
+      // visibility: hidden;
+      transition: visbility 0.1s 2s linear;
+      color: black;
+    }
+  }
+  // &.languages {}
+  .isHidden {
+    // visibility: hidden;
+  }
+  .isOpnedNavi {
+    pointer-events: auto !important;
+  }
+}
