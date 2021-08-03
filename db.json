@@ -7,5 +7,36 @@
         "description": ""
       }
     ]
+  },
+  "courses": {
+    "subtitle": "courses",
+    "headline": "courses that matter",
+    "description": "от новичка до полноценного junior разроботчика.Мы знаем как это делать качественно и с удовольствием.",
+    "courseslist": [
+      {
+        "description": "text",
+        "link": "link",
+        "title": "course name",
+        "tags": ["HTML", "JavaScript", "NODE JS"]
+      },
+      {
+        "description": "text",
+        "link": "link",
+        "title": "course name",
+        "tags": ["HTML", "JavaScript", "NODE JS"]
+      },
+      {
+        "description": "text",
+        "link": "link",
+        "title": "course name",
+        "tags": ["HTML", "JavaScript", "NODE JS"]
+      },
+      {
+        "description": "text",
+        "link": "link",
+        "title": "course name",
+        "tags": ["HTML", "JavaScript", "NODE JS"]
+      }
+    ]
   }
 }

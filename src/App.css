@@ -5,3 +5,21 @@
 } */
 @import url('//hello.myfonts.net/count/2e2a1f');
 @import url('//hello.myfonts.net/count/395005');
+html {
+  font-size: 100%;
+}
+@media screen and (min-width: 100em) {
+  html {
+    font-size: 112.5%;
+  }
+}
+@media screen and (min-width: 125em) {
+  html {
+    font-size: 125%;
+  }
+}
+@media screen and (min-width: 150em) {
+  html {
+    font-size: 135%;
+  }
+}
