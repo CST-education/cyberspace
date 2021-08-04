@@ -22,7 +22,7 @@ export class Courses extends Component {
       })
   }
   render() {
-    const { description, headline, subtitle, courseslist } = this.state
+    const { headeDescription, headline, subtitle, courseslist } = this.state
     console.log(courseslist)
     return (
       <section className="courses">
@@ -31,24 +31,75 @@ export class Courses extends Component {
             <span>{subtitle}</span>
           </h2>
           <h1 className="headline-group__headline">{headline}</h1>
-
-          <p className="headline-group__description">{description}</p>
+          <p className="headline-group__description">{headeDescription}</p>
         </div>
         <ul className="l-single-column">
           {courseslist &&
             courseslist.map((course) => {
-              const { description, link, title, tags } = course
+              const { id, description, title, tags } = course
+              const {
+                what,
+                whom,
+                process,
+                benefit,
+                extensions,
+                workLink,
+                prices,
+              } = description
+
               return (
-                <li className="multi-teaser">
-                  <p className="multi-tesear__description">
-                    {description}
-                    <a className="flicker-link" href="" rel="nonopener">
-                      {link}
-                    </a>
-                  </p>
-                  <div className="multi-tesear__notes">
-                    <h3 className="multi-tesear__notes-headline">{title}</h3>
-                    <ul className="multi-tesear__tags">
+                <li className="multi-teaser" key={id}>
+                  <div className="multi-teaser__description">
+                    <p>
+                      <span className="multi-teaser__description-title">
+                        Що це?
+                      </span>
+                      {what}
+                    </p>
+
+                    <p>
+                      <span className="multi-teaser__description-title">
+                        Для кого це?
+                      </span>
+                      {whom}
+                    </p>
+                    <p>
+                      <p className="multi-teaser__description-title">
+                        Як це відбувається?
+                      </p>
+                      {process}
+                    </p>
+                    <p>
+                      <p className="multi-teaser__description-title">
+                        Що це мені надає?
+                      </p>
+                      {benefit}
+                      {workLink && (
+                        <a
+                          className="flicker-link"
+                          href={workLink.path}
+                          rel="nonopener"
+                        >
+                          {workLink.linkTitle}
+                        </a>
+                      )}
+                    </p>
+                    <p>
+                      <p className="multi-teaser__description-title">
+                        Який розвиток далі?
+                      </p>
+                      {extensions}
+                    </p>
+                    <p>
+                      <p className="multi-teaser__description-title">
+                        Скільки це коштує?
+                      </p>
+                      {/* {prices.byMonth},{prices.pieces},{prices.fullYear}, */}
+                    </p>
+                  </div>
+                  <div className="multi-teaser__notes">
+                    <h3 className="multi-teaser__notes-headline">{title}</h3>
+                    <ul className="multi-teaser__tags">
                       {tags.map((tag) => {
                         return <li>{tag}</li>
                       })}
