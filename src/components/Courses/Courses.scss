@@ -89,7 +89,7 @@
 @media screen and (min-width: 40em) {
   .headline-group__headline--painted {
     transform: rotate(-10deg) skewX(6deg);
-    font-size: calc(2em + 10.97vw);
+    font-size: calc(2em + 10vw);
   }
 }
 .headline-group--reversed-headlines .headline-group__headline,
@@ -156,7 +156,7 @@
   .headline-group__description,
   .intro-group__description,
   .technology__micropage-text .trix-content > div {
-    font-size: 2.5em;
+    font-size: 2.4em;
   }
 }
 .headline-group__description p,
@@ -231,7 +231,7 @@
   }
   .headline-group__headline,
   .intro-group__headline {
-    font-size: 13em;
+    font-size: 11em;
   }
   .headline-group__headline--tiny,
   .intro-group__headline--tiny {
