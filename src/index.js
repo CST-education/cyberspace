@@ -7,7 +7,7 @@ import './styles/_shared.scss'
 import 'modern-normalize/modern-normalize.css'
 import { Provider } from 'react-redux'
 import store from './redux/store'
-console.log(store);
+// console.log(store);
 
 ReactDOM.render(
   <Provider store={store}>

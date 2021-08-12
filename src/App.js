@@ -1,10 +1,10 @@
 // import logo from './logo.svg'
 import './App.css'
 
-import { Navigation } from './components/Navigation/Navigation'
-import { MainMenu } from './components/Navigation/MainMenu'
-import { LangSwitcher } from './components/Navigation/LangSwitcher'
-import {Courses} from "./components/Courses/Courses"
+// import { Navigation } from './components/Navigation/Navigation'
+// import { MainMenu } from './components/Navigation/MainMenu'
+// import { LangSwitcher } from './components/Navigation/LangSwitcher'
+import Courses from "./components/Courses/Courses"
 
 // import logo1 from './images/logo/CS Tech Darkblue logo Sign — копия.svg'
 // import logo2 from './images/logo/CS Tech Darkblue logo Sign.svg'

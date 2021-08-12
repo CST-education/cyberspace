@@ -1,25 +1,28 @@
 import './Courses.scss'
 import { Component } from 'react'
-import axios from 'axios'
-const baseUrl = `http://localhost:4344`
-let endPoint = `/courses`
-axios.defaults.baseURL = baseUrl
+import { getAllCourses } from '../../redux/operations/courses'
+import { connect } from 'react-redux'
+// import axios from 'axios'
+// const baseUrl = `http://localhost:4344`
+// let endPoint = `/courses`
+// axios.defaults.baseURL = baseUrl
 
-console.dir(axios)
+// console.dir(axios)
 
-export class Courses extends Component {
+class Courses extends Component {
   state = {}
   componentDidMount() {
-    axios
-      .get(endPoint)
-      .then((response) => {
-        console.log(response)
-        return response.data
-      })
-      .then((data) => {
-        console.log(data)
-        this.setState({ ...data })
-      })
+    this.props.getFetchAllCourses()
+    // axios
+    //   .get(endPoint)
+    //   .then((response) => {
+    //     console.log(response)
+    //     return response.data
+    //   })
+    //   .then((data) => {
+    //     console.log(data)
+    //     this.setState({ ...data })
+    //   })
   }
   render() {
     const { description, headline, subtitle, courseslist } = this.state
@@ -62,3 +65,8 @@ export class Courses extends Component {
     )
   }
 }
+// const mapStateToProps = {}
+const mapDispatchToProps = {
+  getFetchAllCourses: getAllCourses,
+}
+export default connect(null, mapDispatchToProps)(Courses)
