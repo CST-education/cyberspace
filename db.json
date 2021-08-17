@@ -1,149 +1,41 @@
 {
-  "courses": {
-    "subtitle": "наші курси",
-    "headline": "курси, які навчають",
-    "headeDescription": "Від новачка до полноцінного junior розробника. Ми знаємо як це зробити якісно і з задоволенням.",
-    "courseslist": [
+  "cyber kids": {
+    "programms": [
       {
-        "id": "1-fullstack",
-        "description": {
-          "what": "Full Stack - це повноцінний набір знань та навичок щодо створення будь-якого проекту на всіх етапах від узгодження до продакшена та підтрими.",
-          "whom": "Курс призначений тим, хто вирішив змінити свою сферу діяльності або тільки визначився з нею, тобто новачкам.",
-          "process": "Навчання розраховане на 10 місяців з двома теоретичними заняттями в робочі дні та обов'язковим практичним заняттям у вихідний день. Всі матеріали, тести, скрінкасти і конспекти сформовані в логічній послідовності для спрощення сприйняття інформації студентом. Способи подачі і закріплення матеріалу виведені практичних чином, на базі результатів і відгуків студентів про наш підхід.",
-          "benefit": "Всі отримані технічні навички будуть сформовані в персональний сайт-портфоліо. М'які навички (soft skills) та IT English відпрацьовується прогятом всього навчання. Щоб успішно працевлаштуватись, ми готуємо до співбесід та супроводжуємо на етапі вирішення тестових завдань.",
-          "extensions": "Ви станете кваліфікованим фахівцем у розробці, який розуміє всі етапи стровення проета. Далі ви зможете поглиблювати свої знання та розвиватись, як розробник. З часом можете обрати менеджерську посаду, або створити свій старап.",
-          "link": {
-            "linkTitle": "Наші студенти",
-            "path": "/our-students"
-          },
-          "prices": {
-            "byMonth": "8x2100",
-            "pieces": "3x4900",
-            "fullYear": "1x12900"
-          }
-        },
-        "title": "Full Stack Js",
-        "tags": [
-          "HTML & CSS, Flexbox & Grid, Sass, Parcel",
-          "JavaScript ES6+, Babel, DOM API, REST API",
-          "React Js, Redux, TypeScript",
-          "NODE Js, Express, Postman",
-          "MongoDB & NoSQL",
-          "Тестування"
-        ]
-      },
-      {
-        "id": "2-frontend",
-        "description": {
-          "what": "",
-          "whom": "",
-          "process": "",
-          "benefit": "",
-          "extensions": "",
-          "link": {
-            "linkTitle": "",
-            "path": ""
-          },
-          "prices": {
-            "byMonth": "8x2100",
-            "pieces": "3x4900",
-            "fullYear": "1x12900"
-          }
-        },
-        "title": "Frontend Js",
-        "tags": [
-          "HTML & CSS",
-          "JavaScript ES6+",
-          "React Js",
-          "NODE Js",
-          "MongoDB & NoSQL"
-        ]
-      },
-      {
-        "id": "3-backend",
-        "description": {
-          "what": "",
-          "whom": "",
-          "process": "",
-          "benefit": "",
-          "extensions": "",
-          "link": {
-            "linkTitle": "",
-            "path": ""
-          },
-          "prices": {
-            "byMonth": "8x2100",
-            "pieces": "3x4900",
-            "fullYear": "1x12900"
-          }
-        },
-
-        "title": "Backend Js",
-        "tags": [
-          "HTML & CSS",
-          "JavaScript ES6+",
-          "React Js",
-          "NODE Js",
-          "MongoDB & NoSQL"
-        ]
-      },
-      {
-        "id": "4-kids3d",
-        "title": "Cyber KIDS 3D",
-        "description": {
-          "what": "Курс Cyber KIDS 3D - це навчання 3D-моделюванню.",
-          "whom": "Для дітей віком 9-10 років",
-          "process": "Двійчи на тиждень по 80 хвилин у робочі дні, протягом всього навчального року. Час занять узгоджується з батьками при наборі групи.",
-          "benefit": "Дитина буде створювати об'ємні фігури з різними формами, текстурами, кольорами та надавати їм дії. Всі розроблені проекти ми формуємо в персональні портфоліо. За бажанням та дозволом батьків, будемо розміщувати на нашому сайті.",
-          "extensions": "Отримані на цьому курсі знання та навички розвинуть абстратне мислення дитини. Це стане гарною базою для подальшого розвитку в моделюванні та дизайні або на початку навчання програмуванню, якщо дитина більш схильна до цього.",
-          "workLink": {
-            "linkTitle": "Дивіться дитячи роботи",
-            "path": "/kids-works"
-          },
-          "prices": {
-            "byMonth": "8x2100",
-            "pieces": "3x4900",
-            "fullYear": "1x12900"
-          }
-        },
-        "headOfCourse": {
-          "name": "Борис Дмитренко",
-          "avatar": "",
-          "experience": "",
-          "links": {
-            "facebook": "",
-            "instagram": "",
-            "telegram": ""
-          }
-        },
-        "tags": ["Blender", "JavaScript", "NODE JS"]
+        "id": "1",
+        "title": "cyber kids 3d",
+        "description": ""
       }
     ]
   },
-  "coursesEN": {
+  "courses": {
     "subtitle": "courses",
     "headline": "courses that matter",
     "description": "от новичка до полноценного junior разроботчика.Мы знаем как это делать качественно и с удовольствием.",
     "courseslist": [
       {
+        "id": "1k",
         "description": "text",
         "link": "link",
         "title": "course name",
         "tags": ["HTML", "JavaScript", "NODE JS"]
       },
       {
+        "id": "2k",
         "description": "text",
         "link": "link",
         "title": "course name",
         "tags": ["HTML", "JavaScript", "NODE JS"]
       },
       {
+        "id": "3k",
         "description": "text",
         "link": "link",
         "title": "course name",
         "tags": ["HTML", "JavaScript", "NODE JS"]
       },
       {
+        "id": "4k",
         "description": "text",
         "link": "link",
         "title": "course name",

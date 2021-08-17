@@ -62,25 +62,25 @@ export function Hero() {
               <img src={back} alt="flying smthng" width="64" />
             </div>
             <div className="parallax__layer">
-              {/* <img src={node} alt="flying smthng" width="128" /> */}
+              <img src={node} alt="flying smthng" width="128" />
             </div>
             <div className="parallax__layer">
-              {/* <img src={redux} alt="flying smthng" width="64" /> */}
+              <img src={redux} alt="flying smthng" width="64" />
             </div>
             <div className="parallax__layer">
-              {/* <img src={logo} alt="flying smthng" width="64" /> */}
+              <img src={logo} alt="flying smthng" width="64" />
             </div>
             <div className="parallax__layer">
-              {/* <img src={sass} alt="flying smthng" width="64" /> */}
+              <img src={sass} alt="flying smthng" width="64" />
             </div>
             <div className="parallax__layer">
-              {/* <img src={js} alt="flying smthng" width="64" /> */}
+              <img src={js} alt="flying smthng" width="64" />
             </div>
             <div className="parallax__layer">
-              {/* <img src={v8} alt="flying smthng" width="64" /> */}
+              <img src={v8} alt="flying smthng" width="64" />
             </div>
             <div className="parallax__layer">
-              {/* <img src={html} alt="flying smthng" width="64" /> */}
+              <img src={html} alt="flying smthng" width="64" />
             </div>
           </div>
         </div>
