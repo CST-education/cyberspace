@@ -50,17 +50,67 @@ class Courses extends Component {
           {coursesList &&
             coursesList.map((course) => {
               const { id, description, link, title, tags } = course
+              const {
+                what,
+                whom,
+                process,
+                benefit,
+                extensions,
+                workLink,
+                prices,
+              } = description
               return (
                 <li key={id} className="multi-teaser">
-                  <p className="multi-tesear__description">
-                    {description}
-                    <a className="flicker-link" href="" rel="nonopener">
-                      {link}
-                    </a>
-                  </p>
-                  <div className="multi-tesear__notes">
-                    <h3 className="multi-tesear__notes-headline">{title}</h3>
-                    <ul className="multi-tesear__tags">
+                  <div className="multi-teaser__description">
+                    <p>
+                      <span className="multi-teaser__description-title">
+                        Що це?
+                      </span>
+                      {what}
+                    </p>
+                    <p>
+                      <span className="multi-teaser__description-title">
+                        Для кого?
+                      </span>
+                      {whom}
+                    </p>
+                    <p>
+                      <span className="multi-teaser__description-title">
+                        Як це відбувається?
+                      </span>
+                      {process}
+                    </p>
+                    <p>
+                      <span className="multi-teaser__description-title">
+                        Що це мені дає?
+                      </span>
+                      {benefit}
+                      {workLink && (
+                        <a
+                          className="flicker-link"
+                          href={workLink.path}
+                          rel="nonopener"
+                        >
+                          {workLink.linkTitle}
+                        </a>
+                      )}
+                    </p>
+                    <p>
+                      <span className="multi-teaser__description-title">
+                        Який розвиток далі?
+                      </span>
+                      {extensions}
+                    </p>
+                    <p>
+                      <span className="multi-teaser__description-title">
+                        Скільки це коштує?
+                      </span>
+                      {/* {prices} */}
+                    </p>
+                  </div>
+                  <div className="multi-teaser__notes">
+                    <h3 className="multi-teaser__notes-headline">{title}</h3>
+                    <ul className="multi-teaser__tags">
                       {tags.map((tag) => {
                         return <li key={idb()}>{tag}</li>
                       })}
