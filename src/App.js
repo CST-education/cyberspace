@@ -4,7 +4,8 @@ import './App.css'
 // import { Navigation } from './components/Navigation/Navigation'
 // import { MainMenu } from './components/Navigation/MainMenu'
 // import { LangSwitcher } from './components/Navigation/LangSwitcher'
-import Courses from "./components/Courses/Courses"
+import { About } from './components/About/About'
+import Courses from './components/Courses/Courses'
 
 // import logo1 from './images/logo/CS Tech Darkblue logo Sign — копия.svg'
 // import logo2 from './images/logo/CS Tech Darkblue logo Sign.svg'
@@ -18,13 +19,14 @@ import { Footer } from './components/Footer/Footer'
 function App() {
   return (
     <div className="App">
-     {/* <MainMenu /> */}
+      {/* <MainMenu /> */}
       {/* <Navigation /> */}
       {/* <LangSwitcher /> */}
       <Hero />
-      <Courses/>
+      <About />
+      <Courses />
       <Footer />
-     </div>
+    </div>
   )
 }
 

@@ -1,6 +1,6 @@
 {
   "courses": {
-    "subtitle": "наші курси",
+    "subtitle": "курси",
     "headline": "курси, які навчають",
     "headeDescription": "Від новачка до полноцінного junior розробника. Ми знаємо як це зробити якісно і з задоволенням.",
     "courseslist": [
@@ -30,61 +30,6 @@
           "NODE Js, Express, Postman",
           "MongoDB & NoSQL",
           "Тестування"
-        ]
-      },
-      {
-        "id": "2-frontend",
-        "description": {
-          "what": "",
-          "whom": "",
-          "process": "",
-          "benefit": "",
-          "extensions": "",
-          "link": {
-            "linkTitle": "",
-            "path": ""
-          },
-          "prices": {
-            "byMonth": "8x2100",
-            "pieces": "3x4900",
-            "fullYear": "1x12900"
-          }
-        },
-        "title": "Frontend Js",
-        "tags": [
-          "HTML & CSS",
-          "JavaScript ES6+",
-          "React Js",
-          "NODE Js",
-          "MongoDB & NoSQL"
-        ]
-      },
-      {
-        "id": "3-backend",
-        "description": {
-          "what": "",
-          "whom": "",
-          "process": "",
-          "benefit": "",
-          "extensions": "",
-          "link": {
-            "linkTitle": "",
-            "path": ""
-          },
-          "prices": {
-            "byMonth": "8x2100",
-            "pieces": "3x4900",
-            "fullYear": "1x12900"
-          }
-        },
-
-        "title": "Backend Js",
-        "tags": [
-          "HTML & CSS",
-          "JavaScript ES6+",
-          "React Js",
-          "NODE Js",
-          "MongoDB & NoSQL"
         ]
       },
       {
