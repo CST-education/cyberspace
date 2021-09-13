@@ -5,7 +5,7 @@ import './App.css'
 // import { MainMenu } from './components/Navigation/MainMenu'
 // import { LangSwitcher } from './components/Navigation/LangSwitcher'
 import { About } from './components/About/About'
-import Courses from './components/Courses/Courses'
+import { Courses } from './components/Courses/Courses'
 
 // import logo1 from './images/logo/CS Tech Darkblue logo Sign — копия.svg'
 // import logo2 from './images/logo/CS Tech Darkblue logo Sign.svg'

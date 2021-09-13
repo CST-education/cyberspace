@@ -8,8 +8,12 @@ export function Hero() {
         <div className="intro__center">
           <img src={logo} alt="logo" />
           <p className="intro-type__second intro-type__small">
-            Development with Love! <br />
-            Education with Pleasure!
+            {/* development is freedom */}
+            the world is wide
+            <br />
+            development education
+            {/* Development with Love! <br />
+            Education with Pleasure! */}
           </p>
         </div>
       </div>

@@ -164,10 +164,12 @@
   background-size: 100% 100%;
   position: absolute;
   left: 50%;
-  top: calc(58% - 8.5vmin);
+  // top: calc(58% - 8.5vmin);
+  top: 50%;
   transform: translate(-50%, -50%);
 }
-.intro--cyber:before {
+// .intro--cyber:before
+.intro__center::before {
   background-image: url('../../images/hero-pseudoback.jpg');
   background-size: cover;
 }
@@ -178,6 +180,15 @@
   height: 100vw;
   margin: 0 auto;
   position: relative;
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    top: 72%;
+    right: -50%;
+    transform: translate(-50%, -50%);
+  }
 }
 .keyvisual {
   perspective: 800px;
@@ -228,8 +239,8 @@
 }
 .intro-type__small {
   font-weight: bold;
-  font-size: 3.1vmin;
-  line-height: 1.5;
+  font-size: 5.1vmin;
+  line-height: 2;
   text-transform: uppercase;
   letter-spacing: 0.4em;
   text-align: center;
@@ -257,19 +268,19 @@
   transform: translate(-50%) !important;
   top: 45.5%;
 }
-.intro__lines {
-  position: absolute;
-  left: 60.7%;
-  top: 51.7%;
-  min-width: 60.2%;
-  width: 28vw;
-  height: 38.5%;
-  z-index: 1;
-}
-.intro__lines img {
-  width: 100%;
-  height: 100%;
-}
+// .intro__lines {
+//   position: absolute;
+//   left: 60.7%;
+//   top: 51.7%;
+//   min-width: 60.2%;
+//   width: 28vw;
+//   height: 38.5%;
+//   z-index: 1;
+// }
+// .intro__lines img {
+//   width: 100%;
+//   height: 100%;
+// }
 .intro__branding {
   position: absolute;
   width: 5.125em;
@@ -284,86 +295,86 @@
   width: 100%;
   height: 100%;
 }
-.parallax-container {
-  position: absolute;
-  left: 50%;
-  top: calc(50% - 8.5vmin);
-  width: 160vmin;
-  height: 45vmin;
-  transform: translate(-50%, -100%);
-  z-index: 3;
-}
-.parallax {
-  height: 100%;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-}
-.parallax__layer {
-  width: 100%;
-  height: 100%;
-}
-.parallax__layer img {
-  position: absolute;
-  -webkit-animation: flyin 1.6s 0s ease-out both;
-  animation: flyin 1.6s 0s ease-out both;
-}
-.parallax__layer:nth-child(1) img {
-  width: 42.3055%;
-  left: 29%;
-  top: 29%;
-  -webkit-animation-delay: 1s;
-  animation-delay: 2s;
-}
-.parallax__layer:nth-child(2) img {
-  width: 8.6%;
-  left: 75.3%;
-  top: 42.3%;
-  -webkit-animation-delay: 1.4s;
-  animation-delay: 1.4s;
-}
-.parallax__layer:nth-child(3) img {
-  width: 6.6%;
-  left: 36%;
-  top: 38%;
-  -webkit-animation-delay: 1.4s;
-  animation-delay: 1.4s;
-}
-.parallax__layer:nth-child(4) img {
-  width: 8.4%;
-  left: 14.5%;
-  top: 47%;
-  -webkit-animation-delay: 1.8s;
-  animation-delay: 1.8s;
-}
-.parallax__layer:nth-child(5) img {
-  width: 13.8%;
-  left: 0%;
-  top: 62%;
-  -webkit-animation-delay: 2.2s;
-  animation-delay: 2.2s;
-}
-.parallax__layer:nth-child(6) img {
-  width: 13.8%;
-  left: 58%;
-  top: 62%;
-  -webkit-animation-delay: 2.2s;
-  animation-delay: 2.2s;
-}
-.parallax__layer:nth-child(7) img {
-  width: 13.8%;
-  left: 49%;
-  top: 32%;
-  -webkit-animation-delay: 2.2s;
-  animation-delay: 2.2s;
-}
-.parallax__layer:nth-child(8) img {
-  width: 13.8%;
-  left: 69%;
-  top: 82%;
-  -webkit-animation-delay: 2.2s;
-  animation-delay: 2.2s;
-}
+// .parallax-container {
+//   position: absolute;
+//   left: 50%;
+//   top: calc(50% - 8.5vmin);
+//   width: 160vmin;
+//   height: 45vmin;
+//   transform: translate(-50%, -100%);
+//   z-index: 3;
+// }
+// .parallax {
+//   height: 100%;
+//   width: 100%;
+//   max-width: 100%;
+//   margin: 0 auto;
+// }
+// .parallax__layer {
+//   width: 100%;
+//   height: 100%;
+// }
+// .parallax__layer img {
+//   position: absolute;
+//   -webkit-animation: flyin 1.6s 0s ease-out both;
+//   animation: flyin 1.6s 0s ease-out both;
+// }
+// .parallax__layer:nth-child(1) img {
+//   width: 42.3055%;
+//   left: 29%;
+//   top: 29%;
+//   -webkit-animation-delay: 1s;
+//   animation-delay: 2s;
+// }
+// .parallax__layer:nth-child(2) img {
+//   width: 8.6%;
+//   left: 75.3%;
+//   top: 42.3%;
+//   -webkit-animation-delay: 1.4s;
+//   animation-delay: 1.4s;
+// }
+// .parallax__layer:nth-child(3) img {
+//   width: 6.6%;
+//   left: 36%;
+//   top: 38%;
+//   -webkit-animation-delay: 1.4s;
+//   animation-delay: 1.4s;
+// }
+// .parallax__layer:nth-child(4) img {
+//   width: 8.4%;
+//   left: 14.5%;
+//   top: 47%;
+//   -webkit-animation-delay: 1.8s;
+//   animation-delay: 1.8s;
+// }
+// .parallax__layer:nth-child(5) img {
+//   width: 13.8%;
+//   left: 0%;
+//   top: 62%;
+//   -webkit-animation-delay: 2.2s;
+//   animation-delay: 2.2s;
+// }
+// .parallax__layer:nth-child(6) img {
+//   width: 13.8%;
+//   left: 58%;
+//   top: 62%;
+//   -webkit-animation-delay: 2.2s;
+//   animation-delay: 2.2s;
+// }
+// .parallax__layer:nth-child(7) img {
+//   width: 13.8%;
+//   left: 49%;
+//   top: 32%;
+//   -webkit-animation-delay: 2.2s;
+//   animation-delay: 2.2s;
+// }
+// .parallax__layer:nth-child(8) img {
+//   width: 13.8%;
+//   left: 69%;
+//   top: 82%;
+//   -webkit-animation-delay: 2.2s;
+//   animation-delay: 2.2s;
+// }
 @-webkit-keyframes flyin {
   0% {
     opacity: 0;

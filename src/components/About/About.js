@@ -1,4 +1,5 @@
 import './About.scss'
+import './about.css'
 export function About() {
   return (
     <section className="preamble">
