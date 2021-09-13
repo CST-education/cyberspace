@@ -8,6 +8,7 @@ import 'modern-normalize/modern-normalize.css'
 import { Provider } from 'react-redux'
 import store from './redux/store'
 // console.log(store);
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.render(
   <Provider store={store}>
