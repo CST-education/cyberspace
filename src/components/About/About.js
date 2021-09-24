@@ -1,66 +1,251 @@
-import { useState } from 'react'
-import { Carousel } from 'react-bootstrap'
-import './About.scss'
-import './about.css'
-const about = [
+import { useState, Component, createRef } from "react";
+
+import "./About.scss";
+// import "./about.css";
+// const about = [
+//   {
+//     id: "sdacdvfdsv",
+//     accent: "Cyber Space Technology",
+//     content:
+//       " - це необмежений простір, в якому пізнають та навчаються створювати футуристичні новітні проекти. Світ змінюється кожну мить, ми повинні знати у якому саме напрямку, розуміти істину змін, опановувати їх та творити технологічно-інформаційну синергію.",
+//   },
+//   {
+//     id: "vadfvarv",
+//     accent: "Cyber MASTER",
+//     content:
+//       " - програми для дорослих, що вирішили кардинально змінити діяльність або спеціалісти що бажають підвищити свій існуючий рівень, створені за потребами сучасного ринку IT. Кожен отримає все необхідне, щоб після навчання отримати завітний оффер, адже ведучі рекрутери завжди з нами!",
+//   },
+//   {
+//     id: "adfvdf",
+//     accent: "Cyber KIDS ",
+//     content:
+//       " - дитячі програми розвинуть здібності та таланти, сформують надійний фундамент для подальших досягнень вашої дитини. У Cyber Space Kids вже з дев'яти років маленькі генії опановують безмежний простір технологій, пізнають та підкорюють цифровий всесвіт. Для них це захоплююча подорож у всесвіт в якому людина та технології створюють шедеври!",
+//   },
+//   {
+//     id: "adfvadv",
+//     accent: "Get started! ",
+//     content:
+//       "Все починається з малого, з простого бажання пізнати технологію, саме тому Cyber Space Technology створили адаптивні курси, які дадуть змогу опанувати сферу IT та прокласти свій шлях у цифрове майбутнє кожному бажаючому!",
+//   },
+// ];
+// export function About() {
+//   const [idx, setIdx] = useState(0);
+//   const handleSelect = (selectedIdx, e) => setIdx(selectedIdx);
+//   return (
+//     <section className="preamble">
+//       <div className="l-center-offset">
+//         {/* <div className="l-center-offset__content"> */}
+//         {/* <a href="/projects" className="btn btn--invert btn--block-sm">
+//             Проекти
+//           </a>
+//           <button className="btn btn--secondary btn--block-sm contact-trigger">
+//             Курси
+//           </button> */}
+//         {/* </div> */}
+//       </div>
+//     </section>
+//   );
+// }
+const sliderData = [
   {
-    id: 'sdacdvfdsv',
-    accent: 'Cyber Space Technology',
-    content:
-      ' - це необмежений простір, в якому пізнають та навчаються створювати футуристичні новітні проекти. Світ змінюється кожну мить, ми повинні знати у якому саме напрямку, розуміти істину змін, опановувати їх та творити технологічно-інформаційну синергію.',
+    index: 0,
+    headline: "New Fashion Apparel",
+    button: "Shop now",
+    src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/fashion.jpg",
   },
   {
-    id: 'vadfvarv',
-    accent: 'Cyber MASTER',
-    content:
-      ' - програми для дорослих, що вирішили кардинально змінити діяльність або спеціалісти що бажають підвищити свій існуючий рівень, створені за потребами сучасного ринку IT. Кожен отримає все необхідне, щоб після навчання отримати завітний оффер, адже ведучі рекрутери завжди з нами!',
+    index: 1,
+    headline: "In The Wilderness",
+    button: "Book travel",
+    src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/forest.jpg",
   },
   {
-    id: 'adfvdf',
-    accent: 'Cyber KIDS ',
-    content:
-      " - дитячі програми розвинуть здібності та таланти, сформують надійний фундамент для подальших досягнень вашої дитини. У Cyber Space Kids вже з дев'яти років маленькі генії опановують безмежний простір технологій, пізнають та підкорюють цифровий всесвіт. Для них це захоплююча подорож у всесвіт в якому людина та технології створюють шедеври!",
+    index: 2,
+    headline: "For Your Current Mood",
+    button: "Listen",
+    src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/guitar.jpg",
   },
   {
-    id: 'adfvadv',
-    accent: 'Get started! ',
-    content:
-      'Все починається з малого, з простого бажання пізнати технологію, саме тому Cyber Space Technology створили адаптивні курси, які дадуть змогу опанувати сферу IT та прокласти свій шлях у цифрове майбутнє кожному бажаючому!',
+    index: 3,
+    headline: "Focus On The Writing",
+    button: "Get Focused",
+    src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/typewriter.jpg",
   },
-]
-export function About() {
-  const [idx, setIdx] = useState(0)
-  const handleSelect = (selectedIdx, e) => setIdx(selectedIdx)
+];
+
+// =========================
+// Slide
+// =========================
+
+class Slide extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.handleSlideClick = this.handleSlideClick.bind(this);
+    this.imageLoaded = this.imageLoaded.bind(this);
+    this.slide = createRef();
+  }
+
+  handleMouseMove(event) {
+    const el = this.slide.current;
+    const r = el.getBoundingClientRect();
+
+    el.style.setProperty(
+      "--x",
+      event.clientX - (r.left + Math.floor(r.width / 2))
+    );
+    el.style.setProperty(
+      "--y",
+      event.clientY - (r.top + Math.floor(r.height / 2))
+    );
+  }
+
+  handleMouseLeave(event) {
+    this.slide.current.style.setProperty("--x", 0);
+    this.slide.current.style.setProperty("--y", 0);
+  }
+
+  handleSlideClick(event) {
+    this.props.handleSlideClick(this.props.slide.index);
+  }
+
+  imageLoaded(event) {
+    event.target.style.opacity = 1;
+  }
+
+  render() {
+    const { src, button, headline, index } = this.props.slide;
+    const current = this.props.current;
+    let classNames = "slide";
+
+    if (current === index) classNames += " slide--current";
+    else if (current - 1 === index) classNames += " slide--previous";
+    else if (current + 1 === index) classNames += " slide--next";
+
+    return (
+      <li
+        ref={this.slide}
+        className={classNames}
+        onClick={this.handleSlideClick}
+        onMouseMove={this.handleMouseMove}
+        onMouseLeave={this.handleMouseLeave}
+      >
+        <div className="slide__image-wrapper">
+          <img
+            className="slide__image"
+            alt={headline}
+            src={src}
+            onLoad={this.imageLoaded}
+          />
+        </div>
+
+        <article className="slide__content">
+          <h2 className="slide__headline">{headline}</h2>
+          <button className="slide__action btn">{button}</button>
+        </article>
+      </li>
+    );
+  }
+}
+
+// =========================
+// Slider control
+// =========================
+
+const SliderControl = ({ type, title, handleClick }) => {
   return (
-    <section className="preamble">
-      <div className="l-center-offset">
-        {/* <div className="l-center-offset__content"> */}
-        <Carousel
-          activeIndex={idx}
-          // onSelect={handleSelect}
-          className="preamble-cardList"
-        >
-          {about.map((elem) => (
-            <Carousel.Item className="preamble-card" key={elem.id}>
-              <Carousel.Caption>
-                <p className="l-center-offset__content">
-                  <a href="/" className="l-center-offset__content--accent">
-                    {elem.accent}
-                  </a>
-                  {elem.content}
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-        {/* <a href="/projects" className="btn btn--invert btn--block-sm">
-            Проекти
-          </a>
-          <button className="btn btn--secondary btn--block-sm contact-trigger">
-            Курси
-          </button> */}
-        {/* </div> */}
+    <button className={`btn btn--${type}`} title={title} onClick={handleClick}>
+      <svg className="icon" viewBox="0 0 24 24">
+        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+      </svg>
+    </button>
+  );
+};
+
+// =========================
+// Slider
+// =========================
+const heading = "title";
+export class Slider extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { current: 0 };
+    this.handlePreviousClick = this.handlePreviousClick.bind(this);
+    this.handleNextClick = this.handleNextClick.bind(this);
+    this.handleSlideClick = this.handleSlideClick.bind(this);
+  }
+
+  handlePreviousClick() {
+    const previous = this.state.current - 1;
+
+    this.setState({
+      current: previous < 0 ? sliderData.length - 1 : previous,
+    });
+  }
+
+  handleNextClick() {
+    const next = this.state.current + 1;
+
+    this.setState({
+      current: next === sliderData.length ? 0 : next,
+    });
+  }
+
+  handleSlideClick(index) {
+    if (this.state.current !== index) {
+      this.setState({
+        current: index,
+      });
+    }
+  }
+
+  render() {
+    const { current, direction } = this.state;
+    // const { slides, heading } = this.props;
+    // console.log(slides, heading);
+    const headingId = `slider-heading__${heading
+      .replace(/\s+/g, "-")
+      .toLowerCase()}`;
+    const wrapperTransform = {
+      transform: `translateX(-${current * (100 / sliderData.length)}%)`,
+    };
+
+    return (
+      <div className="slider" aria-labelledby={headingId}>
+        <ul className="slider__wrapper" style={wrapperTransform}>
+          <h3 id={headingId} class="visuallyhidden">
+            {heading}
+          </h3>
+
+          {sliderData.map((slide) => {
+            return (
+              <Slide
+                key={slide.index}
+                slide={slide}
+                current={current}
+                handleSlideClick={this.handleSlideClick}
+              />
+            );
+          })}
+        </ul>
+
+        <div className="slider__controls">
+          <SliderControl
+            type="previous"
+            title="Go to previous slide"
+            handleClick={this.handlePreviousClick}
+          />
+
+          <SliderControl
+            type="next"
+            title="Go to next slide"
+            handleClick={this.handleNextClick}
+          />
+        </div>
       </div>
-    </section>
-  )
+    );
+  }
 }
