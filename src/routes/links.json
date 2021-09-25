@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Cyber SPACE",
+    "id": "home",
+    "exact": true,
+    "path": "/",
+    "component": "./pages/Home/Home",
+    "props": {
+      "private": false,
+      "restricted": false
+    }
+  },
+  {
+    "name": "Cyber TEAM",
+    "id": "team",
+    "exact": true,
+    "path": "/team",
+    "component": "./pages/Team/Team",
+    "props": {
+      "private": false,
+      "restricted": false
+    }
+  },
+  {
+    "name": "Cyber COURSES",
+    "id": "courses",
+    "exact": false,
+    "path": "/courses",
+    "component": "./pages/Courses/Courses",
+    "props": {
+      "private": false,
+      "restricted": false
+    }
+  },
+  {
+    "name": "Cyber CONTACTS",
+    "id": "contacts",
+    "exact": false,
+    "path": "/contacts",
+    "component": "./pages/Contacts/Contacts",
+    "props": {
+      "private": true,
+      "restricted": false
+    }
+  }
+]

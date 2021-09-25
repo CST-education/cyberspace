@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import data from './courses.json'
+import data from './coursesList.json'
 import { v4 as idb } from 'uuid'
-import './Courses.scss'
+import './CoursesList.scss'
 
 const { courses } = data
 

@@ -1,8 +1,9 @@
-.globalMenu {
+.topNav {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: white;
+  // width: 100vw;
+  // height: 100vh;
+  // background: white;
+  color: white;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -39,7 +40,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
-      color: black;
+      color: rgb(250, 250, 250);
       // opacity: 0;
       padding: 0.5em 0;
       border-top: 2px solid rgba(0, 5, 4, 0.1);
@@ -81,7 +82,8 @@
       display: block;
       // visibility: hidden;
       transition: visbility 0.1s 2s linear;
-      color: black;
+      background-color: black;
+      color: rgb(245, 240, 240);
     }
   }
   // &.languages {}

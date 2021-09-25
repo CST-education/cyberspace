@@ -1,39 +1,20 @@
-import s from "./Navigation.module.scss";
+import { NavLink } from 'react-router-dom'
+import s from './Navigation.module.scss'
+
+import links from '../../routes/links.json'
+console.log(links)
 export function Navigation() {
   return (
     <nav className={s.topNav}>
       <ul className={s.navList}>
-        {/* <li className={s.item}>
-          <a className={s.link} href="/">
-            На головну
-          </a>
-        </li> */}
-        <li className={s.item}>
-          <a className={s.link} href="/about">
-            Про нас
-          </a>
-        </li>
-        {/* <li className={s.item}>
-          <a className={s.link} href="/company">
-            Company
-          </a>
-        </li>
-        <li className={s.item}>
-          <a className={s.link} href="/how-we-work">
-            How we work
-          </a>
-        </li> */}
-        <li className={s.item}>
-          <a className={s.link} href="/courses">
-            Курси
-          </a>
-        </li>
-        <li className={s.item}>
-          <a className={s.link} href="/contacts">
-            Контакти
-          </a>
-        </li>
+        {links.map((link) => (
+          <li className={s.item} key={link.id}>
+            <NavLink className={s.link} to={link.path} exact={link.exact}>
+              {link.name}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
-  );
+  )
 }
