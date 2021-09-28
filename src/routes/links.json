@@ -14,7 +14,7 @@
     "name": "Cyber TEAM",
     "id": "team",
     "exact": true,
-    "path": "/team",
+    "path": "/cyber-team",
     "component": "./pages/Team/Team",
     "props": {
       "private": false,
@@ -22,11 +22,22 @@
     }
   },
   {
-    "name": "Cyber COURSES",
-    "id": "courses",
+    "name": "Cyber MASTERS",
+    "id": "cyber-masters",
     "exact": false,
-    "path": "/courses",
-    "component": "./pages/Courses/Courses",
+    "path": "/cyber-masters",
+    "component": "./pages/Courses/CyberMasters",
+    "props": {
+      "private": false,
+      "restricted": false
+    }
+  },
+  {
+    "name": "Cyber KIDS",
+    "id": "cyber-kids",
+    "exact": false,
+    "path": "/cyber-kids",
+    "component": "./pages/Courses/CyberKids",
     "props": {
       "private": false,
       "restricted": false

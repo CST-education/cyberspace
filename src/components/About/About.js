@@ -233,7 +233,7 @@ export class Slider extends Component {
     return (
       <div className="slider" aria-labelledby={headingId}>
         <ul className="slider__wrapper" style={wrapperTransform}>
-          <h3 id={headingId} class="visuallyhidden">
+          <h3 id={headingId} className="visuallyhidden">
             {heading}
           </h3>
 
