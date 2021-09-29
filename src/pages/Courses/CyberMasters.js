@@ -1,13 +1,77 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { gsap } from 'gsap'
+import back from '../../videos/IMG_5697.mov'
+import comunity from '../../images/comunity.png'
 import s from './CyberMasters.module.css'
 function Courses() {
+  const title = useRef()
+  function handleMouseLeave() {
+    console.log(title)
+    gsap.to(
+      '.distort feDisplacementMap',
+      1,
+      {
+        attr: {
+          scale: 0,
+        },
+        ease: 'circ.out',
+      },
+      1,
+    )
+    gsap.to(
+      '.distort feTurbulence',
+      1,
+      {
+        attr: {
+          baseFrequency: '2.01 .01',
+        },
+        ease: 'circ.out',
+      },
+      1,
+    )
+    gsap.to(
+      title.current,
+      1,
+      {
+        fontVariationSettings: "'wght' 700",
+        ease: 'back.out',
+      },
+      1,
+    )
+  }
+  function handleMouseEnter() {
+    gsap.to('.distort feDisplacementMap', 1, {
+      attr: {
+        scale: 100,
+      },
+      ease: 'circ.out',
+    })
+    gsap.to(
+      '.distort feTurbulence',
+      1,
+      {
+        attr: {
+          baseFrequency: '2.08 .08',
+        },
+        ease: 'circ.out',
+      },
+      1,
+    )
+    gsap.to(title.current, 1, {
+      fontVariationSettings: "'wght' 650",
+      ease: 'back.out',
+    })
+  }
   return (
     <>
       <div className={s.img}>
+        {/* <video autoplay loop muted id="video">
+          <source src={back} type="video/mov" />
+        </video> */}
         <div className={s.container}>
           <div className={s.header}>
             <div className={s.jotformIcon}></div>
-            <a href="/"> Login / Sign Up</a>
+            {/* <a href="/"> Login / Sign Up</a> */}
           </div>
           <div className={s.start}>
             <h2 className={s.title1}>ONLINE COURSES</h2>
@@ -25,9 +89,9 @@ function Courses() {
                 BACKEND
               </a>
               <br />
-              Створюй власне майбутнє разом з Cyber MASTERS
+              <span>Створюй власне майбутнє разом з Cyber MASTERS</span>
               <br />
-              Поринь в Світ Інформаційних технологій!
+              <span>Поринь в Світ Інформаційних технологій!</span>
             </h3>
             <button className={s.button}>GET STARTED</button>
           </div>
@@ -35,9 +99,49 @@ function Courses() {
       </div>
       <div className={s.page2}>
         <div className={s.container}>
-          <h2 className={s.title3}>Cyber MASTERS JS</h2>
+          <h2
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className={s.title3}
+            ref={title}
+          >
+            Cyber MASTERS JS
+          </h2>
+          <svg className={s.distort}>
+            <filter id="distortionFilter">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="2.01 .01"
+                numOctaves="5"
+                seed="2"
+                stitchTiles="noStitch"
+                x="0%"
+                y="0%"
+                width="100%"
+                height="100%"
+                result="noise"
+              ></feTurbulence>
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="noise"
+                scale="0"
+                xChannelSelector="R"
+                yChannelSelector="B"
+                x="0%"
+                y="0%"
+                width="100%"
+                height="100%"
+                filterUnits="userSpaceOnUse"
+              ></feDisplacementMap>
+            </filter>
+          </svg>
           <div className={s.iconList}>
             <div className={s.threeIcon}>
+              {/* <img
+                src="https://img.icons8.com/nolan/64/artificial-intelligence.png"
+                alt="brain"
+                width="96"
+              /> */}
               <svg
                 className={s.icon1Img}
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,31 +149,31 @@ function Courses() {
               >
                 <path
                   d="M512 58.816v21.287c0 12.639-10.288 22.939-22.939 22.939h-3.108v257.801c0 12.639-10.3 22.939-22.939 22.939H267.47v33.663l84.989 62.337c5.115 3.751 6.217 10.93 2.466 16.034a11.455 11.455 0 0 1-9.256 4.691c-2.351 0-4.725-.723-6.767-2.225L267.47 445.89v43.148c0 6.331-5.138 11.47-11.47 11.47-6.331 0-11.47-5.138-11.47-11.47V445.89l-71.432 52.393c-5.104 3.739-12.284 2.638-16.023-2.466-3.751-5.104-2.649-12.284 2.466-16.034l84.989-62.337v-33.663H48.986c-12.639 0-22.939-10.3-22.939-22.939V103.042h-3.108C10.288 103.042 0 92.743 0 80.103V58.816c0-12.651 10.288-22.939 22.939-22.939H244.53V22.962c0-6.331 5.138-11.47 11.47-11.47 6.331 0 11.47 5.138 11.47 11.47v12.915h221.591c12.651 0 22.939 10.288 22.939 22.939zm-22.939 21.287V58.816H22.939v21.287h466.122zm-26.047 280.74V103.042H48.986v257.801h414.028z"
-                  fill="#201C1C"
+                  fill="#00FDCF"
                 ></path>
                 <path
-                  fill="#EF8E23"
+                  fill="transparent"
                   d="M22.939 58.816h466.122v21.287H22.939z"
                 ></path>
                 <path
                   d="M463.014 103.042v257.801H48.986V103.042h414.028zM355.59 236.054c0-55.031-44.777-99.808-99.808-99.808-5.7 0-10.323 4.622-10.323 10.323v79.163h-79.163c-5.7 0-10.323 4.622-10.323 10.323 0 55.031 44.777 99.808 99.808 99.808s99.809-44.778 99.809-99.809zm-124.422-34.936v-65.227c0-5.7-4.622-10.323-10.323-10.323-41.657 0-75.538 33.892-75.538 75.55 0 5.7 4.622 10.323 10.323 10.323h65.216c5.7 0 10.322-4.622 10.322-10.323z"
-                  fill="#fff"
+                  fill="transparent"
                 ></path>
                 <path
                   d="M255.782 136.247c55.031 0 99.808 44.777 99.808 99.808s-44.777 99.808-99.808 99.808-99.808-44.777-99.808-99.808c0-5.7 4.622-10.323 10.323-10.323h79.163v-79.163c0-5.7 4.622-10.322 10.322-10.322zm79.163 99.807c0-40.155-30.05-73.417-68.84-78.486v78.486c0 5.7-4.622 10.323-10.323 10.323h-78.486c5.07 38.79 38.331 68.84 78.486 68.84 43.653 0 79.163-35.509 79.163-79.163z"
-                  fill="#201C1C"
+                  fill="#00FDCF"
                 ></path>
                 <path
                   d="M266.105 157.568c38.79 5.07 68.84 38.331 68.84 78.486 0 43.653-35.51 79.163-79.163 79.163-40.155 0-73.417-30.05-78.486-68.84h78.486c5.7 0 10.323-4.622 10.323-10.323v-78.486z"
-                  fill="#CDCDCD"
+                  fill="transparent"
                 ></path>
                 <path
                   d="M231.168 135.891v65.227c0 5.7-4.622 10.323-10.323 10.323H155.63c-5.7 0-10.323-4.622-10.323-10.323 0-41.657 33.881-75.55 75.538-75.55 5.701 0 10.323 4.623 10.323 10.323zm-20.645 54.905v-43.607c-22.01 4.209-39.398 21.597-43.596 43.607h43.596z"
-                  fill="#201C1C"
+                  fill="#00FDCF"
                 ></path>
                 <path
                   d="M210.523 147.189v43.607h-43.596c4.198-22.01 21.586-39.398 43.596-43.607z"
-                  fill="#FFFFFF"
+                  fill="transparent"
                 ></path>
               </svg>
 
@@ -202,40 +306,22 @@ function Courses() {
           <div className={s.page3}>
             <div className={s.container}>
               <div className={s.page3Box}>
-                <img
-                  className={s.page3Img}
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/344846/2.png"
-                  alt=""
-                />
+                <img className={s.page3Img} src={comunity} alt="" />
                 <div className={s.information}>
-                  <div className={s.infoTitle}>Організація студентів</div>
+                  <div className={s.infoTitle}>Інфо для студентів</div>
                   <br />
                   <div className={s.infoAll}>
                     Графік навчання, обов'язкова практика
                   </div>
                   <button className={s.btnLearnMore}>Дізнатися більше</button>
+                  <button class={s.btn16}>Read More</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className={s.under}>
-        <div className={s.container}>
-          <div className={s.copy}>Copyright © 2019</div>
-          <div className={s.sosMed}>
-            <a href="/">
-              <div className={s.facebook}></div>
-            </a>
-            <a href="/">
-              <div className={s.twitter}></div>
-            </a>
-            <a href="/">
-              <div className={s.linkedin}></div>
-            </a>
-          </div>
-        </div>
-      </div>
+      <div className={s.under}></div>
     </>
   )
 }
