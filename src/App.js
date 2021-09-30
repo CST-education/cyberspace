@@ -11,7 +11,7 @@ console.log(routes)
 function App() {
   return (
     <div className="App">
-      {/* <Navigation /> */}
+      <Navigation />
       <Suspense fallback="load...">
         <Switch>
           {routes.map((route) => (
