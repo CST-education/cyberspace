@@ -1,14 +1,37 @@
-[
-  {
-    "title": "front-end",
-    "buttonText": "Get STARTED"
+{
+  "masters": {
+    "mainTitle": "cyber masters",
+    "courses": [
+      {
+        "id": "front-end-masters",
+        "title": "front-end",
+        "buttonText": "Get STARTED"
+      },
+      {
+        "id": "full-stack-masters",
+        "title": "full-stack",
+        "buttonText": "Get STARTED"
+      },
+      {
+        "id": "back-end-masters",
+        "title": "back-end",
+        "buttonText": "Get STARTED"
+      }
+    ]
   },
-  {
-    "title": "full-stack",
-    "buttonText": "Get STARTED"
-  },
-  {
-    "title": "back-end",
-    "buttonText": "Get STARTED"
+  "kids": {
+    "mainTitle": "cyber kidss",
+    "courses": [
+      {
+        "id": "3d-kids",
+        "title": "3d animation",
+        "buttonText": "Get STARTED"
+      },
+      {
+        "id": "cyber-markups",
+        "title": "markup",
+        "buttonText": "Get STARTED"
+      }
+    ]
   }
-]
+}

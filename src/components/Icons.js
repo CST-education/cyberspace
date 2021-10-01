@@ -1,4 +1,4 @@
-import svg from './sprite.svg'
+import svg from '../images/icons/sprite.svg'
 
 export function Icons({ name, className, color, stroke, width, height }) {
   return (

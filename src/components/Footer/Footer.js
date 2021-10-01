@@ -1,5 +1,5 @@
 import './Footer.scss'
-import { Icons } from '../../images/icons/Icons'
+import { Icons } from '../../components/Icons'
 // import logo from '../../images/logo/CS Tech Darkblue logo Sign.svg'
 // import logo2 from '../../images/logo/CS Tech Lightblue logo Sign.svg'
 // import logo1 from '../../images/logo/CS Tech Darkblue logo.svg'

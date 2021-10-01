@@ -130,7 +130,7 @@ class Slide extends Component {
   }
 
   render() {
-    const { src, button, headline, accent, content, index } = this.props.slide
+    const { src, accent, content, index } = this.props.slide
     const current = this.props.current
     let classNames = 'slide'
 
@@ -220,7 +220,7 @@ export class Slider extends Component {
   }
 
   render() {
-    const { current, direction } = this.state
+    const { current } = this.state
     // const { slides, heading } = this.props;
     // console.log(slides, heading);
     const headingId = `slider-heading__${heading

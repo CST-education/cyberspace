@@ -85,7 +85,7 @@ export function Courses() {
                   <h3 className="multi-teaser__notes-headline">{title}</h3>
                   <ul className="multi-teaser__tags">
                     {tags.map((tag) => {
-                      return <li key={idb()}>{tag}</li>
+                      return <li key={tag}>{tag}</li>
                     })}
                   </ul>
                 </div>

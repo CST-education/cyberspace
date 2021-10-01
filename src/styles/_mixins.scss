@@ -25,3 +25,24 @@
     }
   }
 }
+
+@mixin gradientTextColor($color1, $color2) {
+  color: bla;
+  font-variation-settings: 'wght' 700;
+  background: linear-gradient(135deg, $color1 20%, $color2 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin flex-rw {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+@mixin flex-col-c {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}

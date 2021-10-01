@@ -1,10 +1,10 @@
 :root {
   --card-height: 50vh;
   --card-width: calc(var(--card-height) / 1.5);
-  --blue: #12bcb0;
-  --green: #b4ff06b7;
-  --yellow: #fabe0e;
 }
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
 .gradientColor {
   color: bla;
   font-variation-settings: 'wght' 700;
@@ -18,7 +18,7 @@
 }
 
 body {
-  background: #212534;
+  background: $mainBAckColor;
 }
 
 .container {
@@ -67,13 +67,7 @@ a {
 .title2 span {
   color: #ffee01;
 }
-.introduce {
-  color: #ffffffb3;
-  font-family: 'Quicksand', sans-serif;
-  line-height: 1.5;
-  font-size: 1.2rem;
-  margin-bottom: 2.5rem;
-}
+
 .jotformIcon {
   background-image: url('../../images/logo/logo.svg');
   background-repeat: no-repeat;
@@ -83,37 +77,6 @@ a {
   border-radius: 50%;
 }
 
-/*  */
-/* @function grid($grid-size) {
-  @return calc(100vw / 24 * #{$grid-size});
-} */
-
-.title3 {
-  display: inline-block;
-  /* text-align: center; */
-  font-family: 'Quicksand', sans-serif;
-  font-size: calc(100vw / 50 * 3);
-  margin: 4rem auto;
-  padding: 0.3em 0.6em;
-
-  filter: url(#distortionFilter);
-  composes: gradientColor;
-}
-.introduceSpan {
-  font-size: 2rem;
-  composes: gradientColor;
-}
-.distort {
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: -9px;
-  pointer-events: none;
-}
-.title3::selection {
-  background: #161616;
-  color: #f0f0f0;
-}
 /*  */
 .icon1Img {
   background-repeat: no-repeat;
@@ -130,14 +93,11 @@ a {
   font-weight: 500;
   font-size: 15px;
 }
-.flex-rw {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-}
+
 .iconList {
-  composes: flex-rw;
+  @include flex-rw;
 }
+
 .threeIcon {
   flex: 1;
   padding: 30px;
@@ -152,19 +112,20 @@ a {
   color: inherit;
 }
 .threeIcon:nth-child(1) {
-  color: var(--blue);
+  color: $blue;
 }
 .threeIcon:nth-child(2) {
-  color: var(--green);
+  color: $green;
 }
 .threeIcon:nth-child(3) {
-  color: var(--yellow);
+  color: $yellow;
 }
 .page2 {
   text-align: center;
 }
 .page3 {
-  composes: flex-rw;
+  @include flex-rw;
+
   align-items: center;
   padding: 20px 0;
   background-color: #fbfbfb;
@@ -216,110 +177,35 @@ a {
   color: white;
   margin-top: 30px;
 }
-/*  */
+
 .memberships {
-  composes: flex-rw;
+  @include flex-rw;
   align-items: center;
   margin-bottom: 100px;
 }
+
 .memTitle {
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.member {
-  position: relative;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-
-  padding: 20px;
-  margin: 30px;
-
-  width: var(--card-width);
-  height: var(--card-height);
-
-  text-align: center;
-  font-size: 1.5em;
-
-  background: #191c29;
-  color: #abf0f5;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all ease 1.5s;
-}
-
-.member:hover,
-.member:focus {
-  background-color: #abf0f5;
-  color: #191c29;
-  /* color: red; */
-}
-
-.member:hover:before,
-.member:hover:after {
-  animation: none;
-  opacity: 0;
-}
-
-.member::before {
-  content: '';
-  width: 104%;
-  height: 102%;
-  border-radius: 8px;
-  background-image: linear-gradient(
-    var(--rotate),
-    #5ddcff,
-    #3c67e3 43%,
-    #4e00c2
-  );
-  position: absolute;
-  z-index: -1;
-  top: -1%;
-  left: -2%;
-  animation: spin 2.5s linear infinite;
-}
-
-.member::after {
-  position: absolute;
-  content: '';
-  top: calc(var(--card-height) / 6);
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 6));
-  background-image: linear-gradient(
-    var(--rotate),
-    #5ddcff,
-    #3c67e3 43%,
-    #4e00c2
-  );
-  opacity: 1;
-  transition: opacity 0.5s;
-  animation: spin 2.5s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    --rotate: 0deg;
-  }
-  100% {
-    --rotate: 360deg;
-  }
-}
-
 .title1,
 .title2,
-.introduce span,
 .introduceLink {
   display: block;
   background-color: #1616164f;
+}
+.introduce {
+  @include gradientTextColor($blue, $yellow);
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.5;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.introduceSpan {
+  text-transform: uppercase;
 }
 
 .introduceLink {
@@ -341,7 +227,7 @@ a {
 /* #1809ee, #ffee01 */
 .introduceLink:hover,
 .introduceLink:focus {
-  color: var(--blue);
+  color: $blue;
 }
 
 .page4 {
@@ -356,11 +242,4 @@ a {
   .page3Box {
     justify-content: center;
   }
-}
-
-/*  */
-@property --rotate {
-  syntax: '<angle>';
-  initial-value: 132deg;
-  inherits: false;
 }
