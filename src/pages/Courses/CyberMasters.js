@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { SolidTitle } from '../../components/SolidTitle/SolidTitle'
 import { Icons } from '../../components/Icons'
 import { AnimateBorderCard } from '../../components/Cards/AnimateBorderCard'
-import { Btn6 } from '../../components/Buttons/Buttons'
+import { Btn9 } from '../../components/Buttons/Buttons'
 import { TypingText } from '../../components/TypingText/TypingText'
 import { Modal } from '../../components/Modal/Modal'
 import { useState } from 'react'
@@ -113,7 +113,7 @@ function CyberMasters() {
               <TypingText text="Проекти і практика" />
             </li>
           </ul>
-          <Btn6 btnText="Дізнатися більше" />
+          <Btn9 btnText="Дізнатися більше" onClick={handleClick} />
         </div>
       </section>
     </>
