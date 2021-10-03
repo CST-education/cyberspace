@@ -1,95 +1,45 @@
 import { useState, Component, createRef } from 'react'
-
+import { NavLink } from 'react-router-dom'
+import links from '../../routes/links.json'
 import './About.scss'
-// import "./about.css";
-// const about = [
+
+// const sliderData = [
 //   {
-//     id: "sdacdvfdsv",
-//     accent: "Cyber Space Technology",
+//     index: 0,
+//     accent: 'Cyber Space Technology',
 //     content:
-//       " - це необмежений простір, в якому пізнають та навчаються створювати футуристичні новітні проекти. Світ змінюється кожну мить, ми повинні знати у якому саме напрямку, розуміти істину змін, опановувати їх та творити технологічно-інформаційну синергію.",
+//       ' - це необмежений простір, в якому пізнають та навчаються створювати футуристичні новітні проекти. Світ змінюється кожну мить, ми повинні знати у якому саме напрямку, розуміти істину змін, опановувати їх та творити технологічно-інформаційну синергію.',
+//     button: 'Більше',
+//     src: 'https://www.legalbites.in/wp-content/uploads/2020/03/cyber-space.jpg',
 //   },
 //   {
-//     id: "vadfvarv",
-//     accent: "Cyber MASTER",
+//     index: 1,
+//     accent: 'Cyber MASTER',
 //     content:
-//       " - програми для дорослих, що вирішили кардинально змінити діяльність або спеціалісти що бажають підвищити свій існуючий рівень, створені за потребами сучасного ринку IT. Кожен отримає все необхідне, щоб після навчання отримати завітний оффер, адже ведучі рекрутери завжди з нами!",
+//       ' - програми для дорослих, що вирішили кардинально змінити діяльність або спеціалісти що бажають підвищити свій існуючий рівень, створені за потребами сучасного ринку IT. Кожен отримає все необхідне, щоб після навчання отримати завітний оффер, адже ведучі рекрутери завжди з нами!',
+//     button: 'Більше',
+//     src:
+//       'https://i0.wp.com/nypost.com/wp-content/uploads/sites/2/2017/09/feature.jpg?quality=80&strip=all&ssl=1',
 //   },
 //   {
-//     id: "adfvdf",
-//     accent: "Cyber KIDS ",
+//     index: 2,
+//     accent: 'Cyber KIDS ',
 //     content:
 //       " - дитячі програми розвинуть здібності та таланти, сформують надійний фундамент для подальших досягнень вашої дитини. У Cyber Space Kids вже з дев'яти років маленькі генії опановують безмежний простір технологій, пізнають та підкорюють цифровий всесвіт. Для них це захоплююча подорож у всесвіт в якому людина та технології створюють шедеври!",
+//     button: 'Більше',
+//     src:
+//       'https://img1.wallspic.com/originals/8/1/1/4/6/164118-astronaut_phone-astronaut-astronomical_object-art-liquid-2160x3840.jpg',
 //   },
 //   {
-//     id: "adfvadv",
-//     accent: "Get started! ",
+//     index: 3,
+//     accent: 'Get started! ',
 //     content:
-//       "Все починається з малого, з простого бажання пізнати технологію, саме тому Cyber Space Technology створили адаптивні курси, які дадуть змогу опанувати сферу IT та прокласти свій шлях у цифрове майбутнє кожному бажаючому!",
+//       'Все починається з малого, з простого бажання пізнати технологію, саме тому Cyber Space Technology створили адаптивні курси, які дадуть змогу опанувати сферу IT та прокласти свій шлях у цифрове майбутнє кожному бажаючому!',
+//     button: 'Більше',
+//     src:
+//       'https://media.istockphoto.com/vectors/lets-get-started-neon-style-design-elements-vector-id1203621233?k=20&m=1203621233&s=612x612&w=0&h=ddaJAJWwr73W_YWURU24Re-W8DmKszZ_0FhcXn2BKgc=',
 //   },
-// ];
-// export function About() {
-//   const [idx, setIdx] = useState(0);
-//   const handleSelect = (selectedIdx, e) => setIdx(selectedIdx);
-//   return (
-//     <section className="preamble">
-//       <div className="l-center-offset">
-//         {/* <div className="l-center-offset__content"> */}
-//         {/* <a href="/projects" className="btn btn--invert btn--block-sm">
-//             Проекти
-//           </a>
-//           <button className="btn btn--secondary btn--block-sm contact-trigger">
-//             Курси
-//           </button> */}
-//         {/* </div> */}
-//       </div>
-//     </section>
-//   );
-// }
-const sliderData = [
-  {
-    index: 0,
-    headline: 'New Fashion Apparel',
-    accent: 'Cyber Space Technology',
-    content:
-      ' - це необмежений простір, в якому пізнають та навчаються створювати футуристичні новітні проекти. Світ змінюється кожну мить, ми повинні знати у якому саме напрямку, розуміти істину змін, опановувати їх та творити технологічно-інформаційну синергію.',
-    button: 'Більше',
-    src: 'https://www.legalbites.in/wp-content/uploads/2020/03/cyber-space.jpg',
-  },
-  {
-    index: 1,
-    headline: 'In The Wilderness',
-    accent: 'Cyber MASTER',
-    content:
-      ' - програми для дорослих, що вирішили кардинально змінити діяльність або спеціалісти що бажають підвищити свій існуючий рівень, створені за потребами сучасного ринку IT. Кожен отримає все необхідне, щоб після навчання отримати завітний оффер, адже ведучі рекрутери завжди з нами!',
-    button: 'Більше',
-    src:
-      'https://i0.wp.com/nypost.com/wp-content/uploads/sites/2/2017/09/feature.jpg?quality=80&strip=all&ssl=1',
-  },
-  {
-    index: 2,
-    headline: 'For Your Current Mood',
-    accent: 'Cyber KIDS ',
-    content:
-      " - дитячі програми розвинуть здібності та таланти, сформують надійний фундамент для подальших досягнень вашої дитини. У Cyber Space Kids вже з дев'яти років маленькі генії опановують безмежний простір технологій, пізнають та підкорюють цифровий всесвіт. Для них це захоплююча подорож у всесвіт в якому людина та технології створюють шедеври!",
-    button: 'Більше',
-    src:
-      'https://img1.wallspic.com/originals/8/1/1/4/6/164118-astronaut_phone-astronaut-astronomical_object-art-liquid-2160x3840.jpg',
-  },
-  {
-    index: 3,
-    headline: 'Focus On The Writing',
-    accent: 'Get started! ',
-    content:
-      'Все починається з малого, з простого бажання пізнати технологію, саме тому Cyber Space Technology створили адаптивні курси, які дадуть змогу опанувати сферу IT та прокласти свій шлях у цифрове майбутнє кожному бажаючому!',
-    button: 'Більше',
-    src: 'https://media.istockphoto.com/vectors/lets-get-started-neon-style-design-elements-vector-id1203621233?k=20&m=1203621233&s=612x612&w=0&h=ddaJAJWwr73W_YWURU24Re-W8DmKszZ_0FhcXn2BKgc=',
-  },
-]
-
-// =========================
-// Slide
-// =========================
+// ]
 
 class Slide extends Component {
   constructor(props) {
@@ -157,7 +107,7 @@ class Slide extends Component {
 
         <article className="slide__content">
           <h2 className="slide__headline">
-            <a href="/">{accent}</a>
+            <NavLink to="/">{accent}</NavLink>
             <span>{content}</span>
           </h2>
           {/* <button className="slide__action btn">{button}</button> */}
@@ -185,6 +135,7 @@ const SliderControl = ({ type, title, handleClick }) => {
 // Slider
 // =========================
 const heading = 'title'
+const aboutLinks = links.filter((el) => el.sliderData.inAbout)
 export class Slider extends Component {
   constructor(props) {
     super(props)
@@ -199,7 +150,7 @@ export class Slider extends Component {
     const previous = this.state.current - 1
 
     this.setState({
-      current: previous < 0 ? sliderData.length - 1 : previous,
+      current: previous < 0 ? aboutLinks.length - 1 : previous,
     })
   }
 
@@ -207,7 +158,7 @@ export class Slider extends Component {
     const next = this.state.current + 1
 
     this.setState({
-      current: next === sliderData.length ? 0 : next,
+      current: next === aboutLinks.length ? 0 : next,
     })
   }
 
@@ -227,7 +178,7 @@ export class Slider extends Component {
       .replace(/\s+/g, '-')
       .toLowerCase()}`
     const wrapperTransform = {
-      transform: `translateX(-${current * (100 / sliderData.length)}%)`,
+      transform: `translateX(-${current * (100 / links.length)}%)`,
     }
 
     return (
@@ -236,16 +187,24 @@ export class Slider extends Component {
           <h3 id={headingId} className="visuallyhidden">
             {heading}
           </h3>
-
-          {sliderData.map((slide) => {
-            return (
-              <Slide
-                key={slide.index}
-                slide={slide}
-                current={current}
-                handleSlideClick={this.handleSlideClick}
-              />
-            )
+          {links.map((el) => {
+            console.log(el)
+            if (el.sliderData.inAbout) {
+              // {sliderData.map((slide) => {
+              return (
+                <Slide
+                  key={el.id}
+                  slide={el.sliderData}
+                  current={current}
+                  handleSlideClick={this.handleSlideClick}
+                  // key={slide.index}
+                  // slide={slide}
+                  // current={current}
+                  // handleSlideClick={this.handleSlideClick}
+                />
+              )
+              // })}
+            }
           })}
         </ul>
 

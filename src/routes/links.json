@@ -1,6 +1,14 @@
 [
   {
     "name": "Cyber SPACE",
+    "sliderData": {
+      "inAbout": true,
+      "index": 0,
+      "accent": "Cyber Space Technology",
+      "content": " - програми для дорослих, що вирішили кардинально змінити діяльність або спеціалісти що бажають підвищити свій існуючий рівень, створені за потребами сучасного ринку IT. Кожен отримає все необхідне, щоб після навчання отримати завітний оффер, адже ведучі рекрутери завжди з нами!",
+      "button": "Більше",
+      "src": "https://www.legalbites.in/wp-content/uploads/2020/03/cyber-space.jpg"
+    },
     "id": "home",
     "exact": true,
     "path": "/",
@@ -12,6 +20,15 @@
   },
   {
     "name": "Cyber TEAM",
+    "sliderData": {
+      "inAbout": false,
+      "index": 4,
+      "accent": "Cyber TEAM",
+      "content": " - програми для дорослих, що вирішили кардинально змінити діяльність або спеціалісти що бажають підвищити свій існуючий рівень, створені за потребами сучасного ринку IT. Кожен отримає все необхідне, щоб після навчання отримати завітний оффер, адже ведучі рекрутери завжди з нами!",
+      "button": "Більше",
+      "src": ""
+    },
+
     "id": "team",
     "exact": true,
     "path": "/cyber-team",
@@ -23,6 +40,15 @@
   },
   {
     "name": "Cyber MASTERS",
+    "sliderData": {
+      "inAbout": true,
+      "index": 1,
+      "accent": "Cyber MASTERS",
+      "content": " - програми для дорослих, що вирішили кардинально змінити діяльність або спеціалісти що бажають підвищити свій існуючий рівень, створені за потребами сучасного ринку IT. Кожен отримає все необхідне, щоб після навчання отримати завітний оффер, адже ведучі рекрутери завжди з нами!",
+      "button": "Більше",
+      "src": "https://media.istockphoto.com/vectors/lets-get-started-neon-style-design-elements-vector-id1203621233?k=20&m=1203621233&s=612x612&w=0&h=ddaJAJWwr73W_YWURU24Re-W8DmKszZ_0FhcXn2BKgc="
+    },
+
     "id": "cyber-masters",
     "exact": false,
     "path": "/cyber-masters",
@@ -34,6 +60,15 @@
   },
   {
     "name": "Cyber KIDS",
+    "sliderData": {
+      "inAbout": true,
+      "index": 2,
+      "accent": "Cyber KIDS",
+      "content": " - дитячі програми розвинуть здібності та таланти, сформують надійний фундамент для подальших досягнень вашої дитини. У Cyber Space Kids вже з дев'яти років маленькі генії опановують безмежний простір технологій, пізнають та підкорюють цифровий всесвіт. Для них це захоплююча подорож у всесвіт в якому людина та технології створюють шедеври!",
+      "button": "Більше",
+      "src": "https://img1.wallspic.com/originals/8/1/1/4/6/164118-astronaut_phone-astronaut-astronomical_object-art-liquid-2160x3840.jpg"
+    },
+
     "id": "cyber-kids",
     "exact": false,
     "path": "/cyber-kids",
@@ -45,6 +80,15 @@
   },
   {
     "name": "Cyber CONTACTS",
+    "sliderData": {
+      "inAbout": true,
+      "index": 3,
+      "accent": "Cyber CONTACTS",
+      "content": "Все починається з малого, з простого бажання пізнати технологію, саме тому Cyber Space Technology створили адаптивні курси, які дадуть змогу опанувати сферу IT та прокласти свій шлях у цифрове майбутнє кожному бажаючому!",
+      "button": "Більше",
+      "src": "https://media.istockphoto.com/vectors/lets-get-started-neon-style-design-elements-vector-id1203621233?k=20&m=1203621233&s=612x612&w=0&h=ddaJAJWwr73W_YWURU24Re-W8DmKszZ_0FhcXn2BKgc='"
+    },
+
     "id": "contacts",
     "exact": false,
     "path": "/contacts",

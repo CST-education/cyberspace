@@ -69,9 +69,8 @@ export function Footer() {
       </nav>
 
       <address className="footer__address">
-        <p className="street-address">проспект Героїв Сталінграда 6 корпус 2</p>
-        <p className="postal-code">04211</p>
         <p className="locality">Київ</p>
+        <p className="street-address">вул. Почайнинська, 35</p>
         <p className="country-name">Україна</p>
         <a href="tel:+38066288100">+38 066 2 888 100</a> <br />
         <a href="mailto:cyberspace4us@gmail.com">cyberspace4us@gmail.com</a>
