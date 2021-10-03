@@ -9,8 +9,6 @@
   left: 0;
   right: 0;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
   background-color: rgba(0, 0, 0, 0.5);
 }
 @import url('//hello.myfonts.net/count/2e2a1f');

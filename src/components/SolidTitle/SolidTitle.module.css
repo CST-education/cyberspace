@@ -17,7 +17,7 @@
   font-family: 'Quicksand', sans-serif;
   font-size: calc(100vw / 50 * 3);
   text-transform: uppercase;
-  margin: 4rem auto;
+  /* margin: 4rem auto; */
   padding: 0.3em 0.6em;
 
   filter: url(#distortionFilter);

@@ -5,7 +5,6 @@ import s from './SolidTitle.module.css'
 export function SolidTitle({ titleText }) {
   const title = useRef()
   function handleMouseLeave() {
-    console.log(title)
     gsap.to(
       'feDisplacementMap',
       1,

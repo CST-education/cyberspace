@@ -7,16 +7,30 @@ import { Icons } from '../../components/Icons'
 import { AnimateBorderCard } from '../../components/Cards/AnimateBorderCard'
 import { Btn6 } from '../../components/Buttons/Buttons'
 import { TypingText } from '../../components/TypingText/TypingText'
+import { Modal } from '../../components/Modal/Modal'
+import { useState } from 'react'
 
 const {
   masters: { mainTitle, courses },
 } = coursesData
+
 function CyberMasters() {
+  const [showModal, setShowModal] = useState(false)
+
   function handleClick() {
+    setShowModal(true)
     // открываем модальное модалку
+  }
+  function closeModal() {
+    setShowModal(false)
   }
   return (
     <>
+      {showModal && (
+        <Modal toggleModal={closeModal}>
+          <p>HELLO!</p>
+        </Modal>
+      )}
       <section className={s.hero}>
         <div className={s.container}>
           <div className={s.header}>

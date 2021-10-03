@@ -5,18 +5,31 @@ import { NavLink } from 'react-router-dom'
 import { SolidTitle } from '../../components/SolidTitle/SolidTitle'
 import { Icons } from '../../components/Icons'
 import { AnimateBorderCard } from '../../components/Cards/AnimateBorderCard'
-import { Btn6 } from '../../components/Buttons/Buttons'
+import { Btn9 } from '../../components/Buttons/Buttons'
 import { TypingText } from '../../components/TypingText/TypingText'
-
+import { Modal } from '../../components/Modal/Modal'
+import { useState } from 'react'
 const {
   kids: { mainTitle, courses },
 } = coursesData
+
 function CyberKids() {
+  const [showModal, setShowModal] = useState(false)
+
   function handleClick() {
+    setShowModal(true)
     // открываем модальное модалку
+  }
+  function closeModal() {
+    setShowModal(false)
   }
   return (
     <>
+      {showModal && (
+        <Modal toggleModal={closeModal}>
+          <p>HELLO!</p>
+        </Modal>
+      )}
       <section className={s.hero}>
         <div className={s.container}>
           <div className={s.header}>
@@ -27,7 +40,7 @@ function CyberKids() {
           <div className={s.start}>
             <h2 className={s.title1}>{mainTitle}</h2>
             <h1 className={s.title2}>
-              <span>JavaScript</span> Development
+              <span>3D</span> Animation
             </h1>
             <ul>
               {courses.map(({ title }) => (
@@ -78,7 +91,9 @@ function CyberKids() {
             {courses.map(({ id, title, buttonText }) => (
               <AnimateBorderCard key={id}>
                 <div className={s.memTitle}>{title}</div>
-                <button className={s.btnGetFree}>{buttonText}</button>
+                <button className={s.btnGetFree} onClick={handleClick}>
+                  {buttonText}
+                </button>
               </AnimateBorderCard>
             ))}
           </ul>
@@ -99,7 +114,7 @@ function CyberKids() {
               <TypingText text="Проекти і практика" />
             </li>
           </ul>
-          <Btn6 btnText="Дізнатися більше" />
+          <Btn9 btnText="Дізнатися більше" onClick={handleClick} />
         </div>
       </section>
     </>

@@ -14,7 +14,7 @@ function Home() {
       </Container>
 
       <Container>
-        <Slider />
+        {/* <Slider /> */}
       </Container>
       <Container>
         <Courses />
