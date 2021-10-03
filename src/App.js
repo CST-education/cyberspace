@@ -6,12 +6,12 @@ import { Navigation } from './components/Navigation/Navigation'
 import { Footer } from './components/Footer/Footer'
 import './App.css'
 
-console.log(routes)
-
 function App() {
   return (
     <div className="App">
-      <Navigation />
+      <header className="app-header">
+        <Navigation />
+      </header>
       <Suspense fallback="load...">
         <Switch>
           {routes.map((route) => (

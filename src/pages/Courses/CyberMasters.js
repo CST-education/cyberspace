@@ -5,40 +5,24 @@ import { NavLink } from 'react-router-dom'
 import { SolidTitle } from '../../components/SolidTitle/SolidTitle'
 import { Icons } from '../../components/Icons'
 import { AnimateBorderCard } from '../../components/Cards/AnimateBorderCard'
-import {
-  Btn1,
-  Btn2,
-  Btn3,
-  Btn4,
-  Btn5,
-  Btn6,
-  Btn7,
-  Btn8,
-  Btn9,
-  Btn10,
-  Btn11,
-  Btn12,
-  Btn13,
-  Btn14,
-  Btn15,
-  Btn16,
-} from '../../components/Buttons/Buttons'
+import { Btn6 } from '../../components/Buttons/Buttons'
+import { TypingText } from '../../components/TypingText/TypingText'
+
 const {
   masters: { mainTitle, courses },
 } = coursesData
-function Courses() {
+function CyberMasters() {
   function handleClick() {
     // открываем модальное модалку
   }
   return (
     <>
-      <div className={s.img}>
+      <section className={s.hero}>
         <div className={s.container}>
           <div className={s.header}>
             <NavLink to="/">
               <div className={s.jotformIcon}></div>
             </NavLink>
-            {/* <a href="/"> Login / Sign Up</a> */}
           </div>
           <div className={s.start}>
             <h2 className={s.title1}>{mainTitle}</h2>
@@ -47,7 +31,7 @@ function Courses() {
             </h1>
             <ul>
               {courses.map(({ title }) => (
-                <li>
+                <li key={title}>
                   <a className={s.introduceLink} href="/">
                     {title}
                   </a>
@@ -66,8 +50,9 @@ function Courses() {
             </button>
           </div>
         </div>
-      </div>
-      <div className={s.page2}>
+      </section>
+
+      <section className={s.features}>
         <div className={s.container}>
           <SolidTitle titleText={mainTitle} />
           <ul className={s.iconList}>
@@ -85,8 +70,9 @@ function Courses() {
             </li>
           </ul>
         </div>
-      </div>
-      <div className={s.page4}>
+      </section>
+
+      <section className={s.courses}>
         <div className={s.container}>
           <ul className={s.memberships}>
             {courses.map(({ id, title, buttonText }) => (
@@ -97,27 +83,26 @@ function Courses() {
             ))}
           </ul>
         </div>
-        <div className={s.page3}>
-          <img className={s.page3Img} src={comunity} alt="" />
-          <div className={s.information}>
-            <h2 className={s.infoTitle}>Інфо для студентів</h2>
-            <ul className={s.infoAll}>
-              <li>
-                <p>Графік занять</p>
-              </li>
-              <li>
-                <p>IT English</p>
-              </li>
-              <li>
-                <p>Проекти і практика</p>
-              </li>
-            </ul>
-            {/* <button className={s.btnLearnMore}>Дізнатися більше</button> */}
-            <Btn5 btnText="Дізнатися більше" />
-          </div>
+      </section>
+      <section className={s.forStudents}>
+        <img className={s.page3Img} src={comunity} alt="" />
+        <div className={s.information}>
+          <h2 className={s.infoTitle}>Інфо для студентів</h2>
+          <ul className={s.infoAll}>
+            <li>
+              <TypingText text="Графік занять" />
+            </li>
+            <li>
+              <TypingText text="IT English" />
+            </li>
+            <li>
+              <TypingText text="Проекти і практика" />
+            </li>
+          </ul>
+          <Btn6 btnText="Дізнатися більше" />
         </div>
-      </div>
+      </section>
     </>
   )
 }
-export default Courses
+export default CyberMasters

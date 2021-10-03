@@ -1,6 +1,23 @@
-.link {
-  color: white;
+.navList {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
 }
+.link {
+  font-size: 1.2rem;
+  display: inline-block;
+  color: white;
+  padding: 2rem 0;
+  width: inherit;
+  border-bottom: 2px solid transparent;
+  transition: all 0.8s;
+}
+.link:focus,
+.link:hover {
+  color: aquamarine;
+  border-bottom: 2px solid aquamarine;
+}
+
 // .topNav {
 //   position: fixed;
 //   // width: 100vw;

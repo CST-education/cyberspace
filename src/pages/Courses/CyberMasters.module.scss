@@ -1,17 +1,10 @@
-:root {
-  --card-height: 50vh;
-  --card-width: calc(var(--card-height) / 1.5);
-}
+// :root {
+//   --card-height: 50vh;
+//   --card-width: calc(var(--card-height) / 1.5);
+// }
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.gradientColor {
-  color: bla;
-  font-variation-settings: 'wght' 700;
-  background: linear-gradient(135deg, var(--blue) 20%, var(--yellow) 70%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 @font-face {
   font-family: 'Anybody';
   src: url('https://assets.codepen.io/1492907/Anybody.woff2') format('woff2');
@@ -28,13 +21,20 @@ body {
   justify-content: space-between;
 }
 
-.img {
+.gradientColor {
+  color: bla;
+  font-variation-settings: 'wght' 700;
+  background: linear-gradient(135deg, var(--blue) 20%, var(--yellow) 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero {
   /* background-image: url(https://images.unsplash.com/photo-1554595666-19ceabf46a84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80); */
   background-color: black;
   /* background-image: url(../../images/logo/colorLogoSign.svg); */
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 40px 0 100px;
+  padding: 4.4rem 0;
   background-attachment: fixed;
 }
 .header {
@@ -42,7 +42,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-a {
+.introduceLink {
   color: #dbd6d6;
   font-weight: 700;
   font-size: 15px;
@@ -120,10 +120,10 @@ a {
 .threeIcon:nth-child(3) {
   color: $yellow;
 }
-.page2 {
+.features {
   text-align: center;
 }
-.page3 {
+.forStudents {
   @include flex-rw;
 
   align-items: center;
@@ -230,7 +230,7 @@ a {
   color: $blue;
 }
 
-.page4 {
+.courses {
   padding: 6rem 0;
 }
 
