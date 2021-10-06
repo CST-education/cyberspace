@@ -90,7 +90,7 @@ function CyberMasters() {
         <div className={s.container}>
           <ul className={s.memberships}>
             {courses.map(({ id, title, buttonText }) => (
-              <AnimateBorderCard key={id}>
+              <AnimateBorderCard key={id} currentSelector="courseItem">
                 <div className={s.memTitle}>{title}</div>
                 <button className={s.btnGetFree}>{buttonText}</button>
               </AnimateBorderCard>

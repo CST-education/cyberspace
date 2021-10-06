@@ -1,5 +1,5 @@
 import './AnimateBorderCard.css'
 
-export function AnimateBorderCard({ children }) {
-  return <li className="card">{children}</li>
+export function AnimateBorderCard({ currentSelector, children }) {
+  return <li className={`card ${currentSelector}`}>{children}</li>
 }

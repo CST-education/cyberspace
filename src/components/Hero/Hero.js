@@ -9,10 +9,15 @@ export function Hero() {
         <div className="intro__center">
           <img src={logo} alt="logo" className="mainLogo"/>
           <p className="intro-type__second intro-type__small">
+          the world is wide
+          <br />
+          development
+          <br/>
+          education
             {/* the world is wide
             <br /> */}
             {/* development education */}
-            <SolidTitle
+            {/* <SolidTitle
               // className="intro-type__second intro-type__small"
               titleText="the world is wide"
             />
@@ -23,7 +28,7 @@ export function Hero() {
             <SolidTitle
               // className="intro-type__second intro-type__small"
               titleText="education"
-            />
+            /> */}
           </p>
         </div>
       </div>

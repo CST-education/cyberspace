@@ -2,44 +2,7 @@ import { useState, Component, createRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import links from '../../routes/links.json'
 import './About.scss'
-
-// const sliderData = [
-//   {
-//     index: 0,
-//     accent: 'Cyber Space Technology',
-//     content:
-//       ' - це необмежений простір, в якому пізнають та навчаються створювати футуристичні новітні проекти. Світ змінюється кожну мить, ми повинні знати у якому саме напрямку, розуміти істину змін, опановувати їх та творити технологічно-інформаційну синергію.',
-//     button: 'Більше',
-//     src: 'https://www.legalbites.in/wp-content/uploads/2020/03/cyber-space.jpg',
-//   },
-//   {
-//     index: 1,
-//     accent: 'Cyber MASTER',
-//     content:
-//       ' - програми для дорослих, що вирішили кардинально змінити діяльність або спеціалісти що бажають підвищити свій існуючий рівень, створені за потребами сучасного ринку IT. Кожен отримає все необхідне, щоб після навчання отримати завітний оффер, адже ведучі рекрутери завжди з нами!',
-//     button: 'Більше',
-//     src:
-//       'https://i0.wp.com/nypost.com/wp-content/uploads/sites/2/2017/09/feature.jpg?quality=80&strip=all&ssl=1',
-//   },
-//   {
-//     index: 2,
-//     accent: 'Cyber KIDS ',
-//     content:
-//       " - дитячі програми розвинуть здібності та таланти, сформують надійний фундамент для подальших досягнень вашої дитини. У Cyber Space Kids вже з дев'яти років маленькі генії опановують безмежний простір технологій, пізнають та підкорюють цифровий всесвіт. Для них це захоплююча подорож у всесвіт в якому людина та технології створюють шедеври!",
-//     button: 'Більше',
-//     src:
-//       'https://img1.wallspic.com/originals/8/1/1/4/6/164118-astronaut_phone-astronaut-astronomical_object-art-liquid-2160x3840.jpg',
-//   },
-//   {
-//     index: 3,
-//     accent: 'Get started! ',
-//     content:
-//       'Все починається з малого, з простого бажання пізнати технологію, саме тому Cyber Space Technology створили адаптивні курси, які дадуть змогу опанувати сферу IT та прокласти свій шлях у цифрове майбутнє кожному бажаючому!',
-//     button: 'Більше',
-//     src:
-//       'https://media.istockphoto.com/vectors/lets-get-started-neon-style-design-elements-vector-id1203621233?k=20&m=1203621233&s=612x612&w=0&h=ddaJAJWwr73W_YWURU24Re-W8DmKszZ_0FhcXn2BKgc=',
-//   },
-// ]
+import { AnimateBorderCard } from '../Cards/AnimateBorderCard'
 
 class Slide extends Component {
   constructor(props) {
@@ -89,13 +52,21 @@ class Slide extends Component {
     else if (current + 1 === index) classNames += ' slide--next'
 
     return (
-      <li
+      <AnimateBorderCard
         ref={this.slide}
         className={classNames}
         onClick={this.handleSlideClick}
         onMouseMove={this.handleMouseMove}
         onMouseLeave={this.handleMouseLeave}
+        currentSelector="mainItem"
       >
+        {/* // <li
+      //   ref={this.slide}
+      //   className={classNames}
+      //   onClick={this.handleSlideClick}
+      //   onMouseMove={this.handleMouseMove}
+      //   onMouseLeave={this.handleMouseLeave}
+      // > */}
         <div className="slide__image-wrapper">
           <img
             className="slide__image"
@@ -104,7 +75,7 @@ class Slide extends Component {
             onLoad={this.imageLoaded}
           />
         </div>
-
+        <h2>text</h2>
         <article className="slide__content">
           <h2 className="slide__headline">
             <NavLink to="/">{accent}</NavLink>
@@ -112,7 +83,8 @@ class Slide extends Component {
           </h2>
           {/* <button className="slide__action btn">{button}</button> */}
         </article>
-      </li>
+      </AnimateBorderCard>
+      // </li>
     )
   }
 }

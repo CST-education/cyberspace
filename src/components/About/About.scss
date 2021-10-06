@@ -446,24 +446,27 @@ h3 {
 }
 
 .slide__headline {
-  font-size: 4vmin;
+  font-size: 2vmin;
   line-height: 1.2;
   font-weight: 600;
   position: relative;
-  a{
+  a {
     color: #00fdcf;
   }
 }
 
 .slide__content {
   --d: 60;
-
-  opacity: 0;
+  font-size: 10vmin;
+  // opacity: 0;
   padding: 4vmin;
   position: relative;
+  // position: absolute;
   transition: transform var(--base-duration) var(--base-ease);
-  visibility: hidden;
-
+  // visibility: hidden;
+  visibility: visible;
+  &:hover {
+  }
   .slide--current & {
     animation: fade-in calc(var(--base-duration) / 2) var(--base-ease) forwards;
     visibility: visible;

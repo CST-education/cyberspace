@@ -190,10 +190,10 @@
   img {
     display: block;
     height: auto;
-    max-width: 100%;
+    max-width: 80%;
     position: absolute;
-    top: 72%;
-    right: -50%;
+    top: 86%;
+    right: -30%;
     transform: translate(-50%, -50%);
   }
 }
@@ -246,7 +246,7 @@
 }
 .intro-type__small {
   font-weight: bold;
-  font-size: 1.1vmin;
+  font-size: 6vmin;
   line-height: 2;
   text-transform: uppercase;
   letter-spacing: 0.4em;
@@ -254,6 +254,8 @@
   position: absolute;
   width: 100%;
   margin: 0;
+  color: white;
+  text-shadow: 12px 12px 12px black;
 }
 .intro-type__small:after {
   content: '';
@@ -266,7 +268,7 @@
   background: #fff;
 }
 .intro-type__second {
-  top: 89%;
+  top: 40%;
 }
 .intro-type__slogan {
   width: 82%;

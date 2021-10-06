@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .footer__brand {
   overflow: auto;
@@ -9,9 +11,10 @@
 }
 
 .footer {
-  background: #000504;
-  color: #fff;
-  padding: 7.25em 1em 2.5em;
+  background: $main-bgc;
+  color: $white-color;
+  // padding: 7.25em 1em 2.5em;
+  padding: 2em;
   position: relative;
 }
 @media screen and (min-width: 50em) {
@@ -37,7 +40,7 @@
   color: inherit;
 }
 .footer a:hover {
-  color: #00fdcf;
+  color: $mint-color;
 }
 .footer__brand {
   grid-column: 2;

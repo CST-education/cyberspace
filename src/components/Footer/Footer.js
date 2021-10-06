@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="footer" id="footer">
       <div className="footer__brand">
-        <img src={footerLogo} alt="" />
+        <img src={footerLogo} alt="footer logo" />
       </div>
 
       <nav
@@ -21,49 +21,21 @@ export function Footer() {
       >
         <ul className="footer-menu__main-menu">
           <li className="footer-menu_main-item">
-            <a href="/">головна</a>
-          </li>
-          <li className="footer-menu_main-item">
-            <a href="/projects">проекти</a>
-          </li>
-          <li className="footer-menu_main-item">
-            <a href="/company">про компанію</a>
+            <a href="/">cyber space</a>
             <ul className="footer-menu__submenu">
               <li className="footer-menu__sub-item">
-                <a href="/team">команда</a>
+                <a href="/cyber-team">cyber team</a>
               </li>
               <li className="footer-menu__sub-item">
-                <a href="/career">кар'єра</a>
+                <a href="/cyber-contacts">cyber contacts</a>
               </li>
             </ul>
           </li>
           <li className="footer-menu_main-item">
-            <a href="/how-we-work">how we work</a>
-            <ul className="footer-menu__submenu">
-              <li className="footer-menu__sub-item">
-                <a href="/technologies">technologies</a>
-              </li>
-              <li className="footer-menu__sub-item">
-                <a href="/courses">курси</a>
-              </li>
-            </ul>
+            <a href="/cyber-masters">cyber masters</a>
           </li>
           <li className="footer-menu_main-item">
-            <a href="/blog">blog</a>
-          </li>
-          <li className="footer-menu_main-item">
-            <a href="/press">press</a>
-          </li>
-          <li className="footer-menu_main-item">
-            <a href="/contact">contact</a>
-          </li>
-
-          <li className="footer-menu_main-item">
-            <a href="/security">security</a>
-          </li>
-
-          <li className="footer-menu_main-item">
-            <a href="/design">design</a>
+            <a href="/cyber-kids">cyber kids</a>
           </li>
         </ul>
       </nav>
