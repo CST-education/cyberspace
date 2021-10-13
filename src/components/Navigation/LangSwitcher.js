@@ -1,16 +1,16 @@
-import s from './Navigation.module.scss'
+import './NavList.scss'
 export function LangSwitcher() {
   return (
-    <nav className={s.langSwitch}>
-      <ul className={s.languages}>
-        <li className={s.item}>
-          <a className={s.link}>
+    <nav className="langSwitch">
+      <ul className="languages">
+        <li className="item">
+          <a className="link" href="/">
             <span>Укр</span>
             <span>UA</span>
           </a>
         </li>
-        <li className={s.item}>
-          <a className={s.link}>
+        <li className="item">
+          <a className="link" href="/">
             <span>Рус</span>
             <span>RU</span>
           </a>

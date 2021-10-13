@@ -1,4 +1,4 @@
-import { useState, Component, createRef } from 'react'
+import { Component, createRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import links from '../../routes/links.json'
 import './About.scss'
@@ -15,31 +15,23 @@ class Slide extends Component {
     this.slide = createRef()
   }
 
-  handleMouseMove(event) {
+  handleMouseMove = (e) => {
     const el = this.slide.current
     const r = el.getBoundingClientRect()
 
-    el.style.setProperty(
-      '--x',
-      event.clientX - (r.left + Math.floor(r.width / 2)),
-    )
-    el.style.setProperty(
-      '--y',
-      event.clientY - (r.top + Math.floor(r.height / 2)),
-    )
+    el.style.setProperty('--x', e.clientX - (r.left + Math.floor(r.width / 2)))
+    el.style.setProperty('--y', e.clientY - (r.top + Math.floor(r.height / 2)))
   }
 
-  handleMouseLeave(event) {
+  handleMouseLeave = (e) => {
     this.slide.current.style.setProperty('--x', 0)
     this.slide.current.style.setProperty('--y', 0)
   }
-
-  handleSlideClick(event) {
+  handleSlideClick = (e) => {
     this.props.handleSlideClick(this.props.slide.index)
   }
-
-  imageLoaded(event) {
-    event.target.style.opacity = 1
+  imageLoaded = (e) => {
+    e.target.style.opacity = 1
   }
 
   render() {
@@ -60,13 +52,6 @@ class Slide extends Component {
         onMouseLeave={this.handleMouseLeave}
         currentSelector="mainItem"
       >
-        {/* // <li
-      //   ref={this.slide}
-      //   className={classNames}
-      //   onClick={this.handleSlideClick}
-      //   onMouseMove={this.handleMouseMove}
-      //   onMouseLeave={this.handleMouseLeave}
-      // > */}
         <div className="slide__image-wrapper">
           <img
             className="slide__image"
@@ -75,7 +60,6 @@ class Slide extends Component {
             onLoad={this.imageLoaded}
           />
         </div>
-        <h2>text</h2>
         <article className="slide__content">
           <h2 className="slide__headline">
             <NavLink to="/">{accent}</NavLink>
@@ -84,7 +68,6 @@ class Slide extends Component {
           {/* <button className="slide__action btn">{button}</button> */}
         </article>
       </AnimateBorderCard>
-      // </li>
     )
   }
 }
@@ -111,30 +94,27 @@ const aboutLinks = links.filter((el) => el.sliderData.inAbout)
 export class Slider extends Component {
   constructor(props) {
     super(props)
-
     this.state = { current: 0 }
     this.handlePreviousClick = this.handlePreviousClick.bind(this)
     this.handleNextClick = this.handleNextClick.bind(this)
     this.handleSlideClick = this.handleSlideClick.bind(this)
   }
 
-  handlePreviousClick() {
+  handlePreviousClick = () => {
     const previous = this.state.current - 1
-
     this.setState({
       current: previous < 0 ? aboutLinks.length - 1 : previous,
     })
   }
 
-  handleNextClick() {
+  handleNextClick = () => {
     const next = this.state.current + 1
-
     this.setState({
       current: next === aboutLinks.length ? 0 : next,
     })
   }
 
-  handleSlideClick(index) {
+  handleSlideClick = (index) => {
     if (this.state.current !== index) {
       this.setState({
         current: index,
@@ -144,13 +124,11 @@ export class Slider extends Component {
 
   render() {
     const { current } = this.state
-    // const { slides, heading } = this.props;
-    // console.log(slides, heading);
     const headingId = `slider-heading__${heading
       .replace(/\s+/g, '-')
       .toLowerCase()}`
     const wrapperTransform = {
-      transform: `translateX(-${current * (100 / links.length)}%)`,
+      transform: `translateX(-${current * (100 / aboutLinks.length)}%)`,
     }
 
     return (
@@ -159,24 +137,16 @@ export class Slider extends Component {
           <h3 id={headingId} className="visuallyhidden">
             {heading}
           </h3>
-          {links.map((el) => {
+          {aboutLinks.map((el) => {
             console.log(el)
-            if (el.sliderData.inAbout) {
-              // {sliderData.map((slide) => {
-              return (
-                <Slide
-                  key={el.id}
-                  slide={el.sliderData}
-                  current={current}
-                  handleSlideClick={this.handleSlideClick}
-                  // key={slide.index}
-                  // slide={slide}
-                  // current={current}
-                  // handleSlideClick={this.handleSlideClick}
-                />
-              )
-              // })}
-            }
+            return (
+              <Slide
+                key={el.id}
+                slide={el.sliderData}
+                current={current}
+                handleSlideClick={this.handleSlideClick}
+              />
+            )
           })}
         </ul>
 
